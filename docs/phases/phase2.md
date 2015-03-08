@@ -4,8 +4,8 @@
 ### Models
 
 ### Controllers
-Api::ListingsController (create, destroy, index, show)
-Api::CommentssController (create, destroy)
+* Api::ListingsController (create, destroy, index, show)
+* Api::CommentsController (create, destroy)
 
 ### Views
 * listings/show.json.jbuilder
