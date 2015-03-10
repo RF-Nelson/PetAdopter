@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Petadopter</title>
+  <title><strong>PetAdopter</strong></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<%= render '/layouts/errors' %>
+
+<% if signed_in? %>
+  <%= current_user.username %>
+  <form action="<%= session_url %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="authenticity token" value="<%= form_authenticity_token %>">
+    <button name="Sign Out">Sign Out</button>
+  </form>
+<% end %>
+
 <body>
 
 <%= yield %>
