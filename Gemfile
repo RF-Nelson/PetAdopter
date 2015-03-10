@@ -47,3 +47,12 @@ group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
 end
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'guard-rspec'
+  gem 'capybara'
+end
