@@ -56,3 +56,5 @@ group :test do
   gem 'guard-rspec'
   gem 'capybara'
 end
+
+gem 'rails_12factor'
