@@ -8,7 +8,7 @@
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* ListingsController (create, new, show, destroy)
+* ListingsController (index, create, new, show, destroy)
 
 ### Views
 * users/new.html.erb
