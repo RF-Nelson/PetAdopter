@@ -1,6 +1,8 @@
+<% redirect_to listings_url unless current_user.id == @listing.owner_id %>
+
 <h2>Edit Your Adoption Listing</h2>
 <br>
-<form action="<%= listings_url %>" method="post">
+<form action="<%= listing_url(@listing.id) %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="_method" value="patch">
   <input type="hidden" name="listing[owner_id]" value="<%= current_user.id %>">

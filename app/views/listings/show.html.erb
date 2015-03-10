@@ -1,3 +1,5 @@
+<br>
+<br>
 <strong>
 
   Name: <%= @listing.pet_name %><br>
@@ -6,7 +8,9 @@
 
   Location: <%= @listing.location %><br>
 
-  <% unless @listing.breed.nil? %>
+  Adoptee: <%= User.find(@listing.owner_id).email %><br>
+
+  <% unless @listing.breed == "" %>
     Breed: <%= @listing.breed %><br>
   <% end %>
 
@@ -19,3 +23,11 @@
 <br>
 
 <%= @listing.body %>
+<br>
+<br>
+<br>
+<% if current_user.id == @listing.owner_id %>
+  <a href='<%= edit_listing_url(@listing.id) %>'>Edit Your Listing</a>
+<% end %>
+<br><br>
+<a href="/listings">Back to Adoption Listings</a>
