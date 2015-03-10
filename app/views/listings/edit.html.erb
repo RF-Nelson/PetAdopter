@@ -1,4 +1,4 @@
-<h2>Create New Adoption Listing</h2>
+<h2>Edit Your Adoption Listing</h2>
 <br>
 <form action="<%= listings_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -26,6 +26,6 @@
     <textarea name="listing[body]" rows="8" cols="40"><%= @listing.body %></textarea>
   </label><br>
 
-  <button name="Create New Listing">Create New Listing</button>
+  <button name="Edit Listing">Edit Listing</button>
 
 </form>

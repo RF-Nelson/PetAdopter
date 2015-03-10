@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><strong>PetAdopter</strong></title>
+  <title>PetAdopter</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-
+<h1><strong>PetAdopter</strong></h1>
 <%= render '/layouts/errors' %>
 
 <% if signed_in? %>
-  <br>Hello, <%= current_user.username %>!<br>
+  <br>Hello, <%= current_user.email %>!<br>
   <form action="<%= session_url %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="hidden" name="authenticity token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <button name="Sign Out">Sign Out</button>
   </form>
   <br>

@@ -1,5 +1,6 @@
 <h2>Adoption Listings</h2>
 <br>
+<br>
 <table>
   <tr>
     <strong>
@@ -10,9 +11,11 @@
   </tr>
   <% @listings.each do |listing| %>
     <tr>
-      <td>listing.species</td>
-      <td>listing.pet_name</td>
-      <td>listing.location</td>
+      <td><%= listing.species %></td>
+      <td><a href="/listings/<%= listing.id %>"><%= listing.pet_name %></a></td>
+      <td><%= listing.location %></td>
     </tr>
   <% end %>
 </table>
+<br>
+<a href="/listings/new">Create New Listing</a>
