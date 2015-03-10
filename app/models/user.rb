@@ -7,6 +7,12 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  has_many( :listings,
+    class_name: "Listing",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
   def self.find_by_credentials(username, password)
     user = User.all.find_by(username: username)
     return nil unless user && user.is_password?(password)
