@@ -10,7 +10,7 @@
 <%= render '/layouts/errors' %>
 
 <% if signed_in? %>
-  <br>Hello, <%= current_user.email %>!<br>
+  <br>Hello, <%= current_user.email %>! 
   <form action="<%= session_url %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
