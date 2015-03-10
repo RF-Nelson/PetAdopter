@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   has_many( :listings,
     class_name: "Listing",
-    foreign_key: :user_id,
+    foreign_key: :owner_id,
     primary_key: :id
   )
 
