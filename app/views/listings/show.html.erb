@@ -1,0 +1,21 @@
+<strong>
+
+  Name: <%= @listing.pet_name %><br>
+
+  Species: <%= @listing.species %><br>
+
+  Location: <%= @listing.location %><br>
+
+  <% unless @listing.breed.nil? %>
+    Breed: <%= @listing.breed %><br>
+  <% end %>
+
+  <% unless @listing.age.nil? %>
+    Age: <%= @listing.age %><br>
+  <% end %>
+
+</strong>
+
+<br>
+
+<%= @listing.body %>

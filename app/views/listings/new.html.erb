@@ -1,0 +1,40 @@
+<h2>Create New Adoption Listing</h2>
+<br>
+<form action="<%= listings_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="listing[owner_id]" value="<%= current_user.id %>">
+
+  <label>Pet's Name
+  <input type="text" name="listing[pet_name]" value="<%= @listing.pet_name %>">
+  </label><br>
+
+  <label>Species
+    <select name="listing[species]">
+      <option>Cat</option>
+      <option>Dog</option>
+      <option>Bird</option>
+      <option>Rodent</option>
+      <option>Reptile</option>
+      <option>Human</option>
+    </select>
+  </label><br>
+
+  <label>Breed
+  <input type="text" name="listing[breed]" value="<%= @listing.breed %>">
+  </label><br>
+
+  <label>Age
+  <input type="text" name="listing[age]" value="<%= @listing.age %>">
+  </label><br>
+
+  <label>Location
+  <input type="text" name="listing[location]" value="<%= @listing.location %>">
+  </label><br>
+
+  <label>Body
+    <textarea name="listing[body]" rows="8" cols="40"><%= @listing.body %></textarea>
+  </label><br>
+
+  <button name="Create New Listing">Create New Listing</button>
+
+</form>

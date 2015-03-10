@@ -1,0 +1,18 @@
+<h2>Adoption Listings</h2>
+<br>
+<table>
+  <tr>
+    <strong>
+      <td>Species</td>
+      <td>Name</td>
+      <td>Location</td>
+    </strong>
+  </tr>
+  <% @listings.each do |listing| %>
+    <tr>
+      <td>listing.species</td>
+      <td>listing.pet_name</td>
+      <td>listing.location</td>
+    </tr>
+  <% end %>
+</table>

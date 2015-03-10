@@ -10,12 +10,13 @@
 <%= render '/layouts/errors' %>
 
 <% if signed_in? %>
-  <%= current_user.username %>
+  <br>Hello, <%= current_user.username %>!<br>
   <form action="<%= session_url %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="hidden" name="authenticity token" value="<%= form_authenticity_token %>">
     <button name="Sign Out">Sign Out</button>
   </form>
+  <br>
 <% end %>
 
 <body>
