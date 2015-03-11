@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
 
   def new
-    @user = User.new
-    render :new
+    if signed_in?
+      redirect_to listings_url
+    else
+      @user = User.new
+      render :new
+    end  
   end
 
   def create
