@@ -9,10 +9,10 @@ class Listing < ActiveRecord::Base
     primary_key: :id
   )
 
-
-
-
-
-
+  has_many( :comments,
+    class_name: "Comment",
+    foreign_key: :listing_id,
+    primary_key: :id
+  )
 
 end

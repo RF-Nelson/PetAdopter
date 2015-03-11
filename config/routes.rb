@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resource :session
-  resources :listings
+  resources :listings do
+    resources :comments
+  end
 end
