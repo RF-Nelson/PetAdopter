@@ -5,10 +5,10 @@ Petadopter.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": 'index',
-    "api/listings/new": 'new',
-    "api/listings/:id/edit": 'edit',
-    "api/listings/:id/show": 'show'
+    "": "index",
+    "listings/new": 'new',
+    "listings/:id/edit": 'edit',
+    "listings/:id": 'show'
   },
 
   index: function () {
@@ -28,7 +28,7 @@ Petadopter.Routers.Router = Backbone.Router.extend({
   },
 
   edit: function (id) {
-    var post = Petadopter.Collections.posts.getOrFetch(id)
+    var post = Petadopter.Collections.listings.getOrFetch(id)
     var view = new Petadopter.Views.ListingForm({
       model: listing, collection: Petadopter.Collections.listings
     })
@@ -36,11 +36,12 @@ Petadopter.Routers.Router = Backbone.Router.extend({
   },
 
   show: function (id) {
-    var post = Petadopter.Collections.posts.getOrFetch(id)
+    var post = Petadopter.Collections.listings.getOrFetch(id)
     var view = new Petadopter.Views.ListingShow({
       model: post
     })
-    this._swapView(view)
+    this.$rootEl.append(view.render().$el)
+    // this._swapView(view)
   },
 
   _swapView: function (view) {

@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require_jquery-ui.css
+ *= require_jquery-ui.structure.css
+ *= require_jquery-ui.theme.css
  */

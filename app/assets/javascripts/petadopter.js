@@ -4,7 +4,9 @@ window.Petadopter = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new Petadopter.Routers.Router({ $rootEl = $('#content') })
+    new Petadopter.Routers.Router({
+      $rootEl: $("#content")
+    })
     Backbone.history.start()
   }
 };

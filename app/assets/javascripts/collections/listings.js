@@ -1,5 +1,5 @@
 Petadopter.Collections.Listings = Backbone.Collection.extend({
-  url: 'api/posts'
+  url: 'api/listings',
   model: Petadopter.Models.Listing,
 
   getOrFetch: function (id) {

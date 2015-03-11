@@ -58,7 +58,7 @@ group :test do
   gem 'capybara'
 end
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 group :test do
   gem "shoulda-matchers"
