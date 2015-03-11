@@ -36,3 +36,22 @@
 <% end %>
 <br><br>
 <a href="/listings">Back to Adoption Listings</a>
+<br><br>
+<h3>Add Comment</h3>
+<form action="<%= listing_comments_url(@listing) %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <textarea name="comment[body]" rows="4" cols="40"></textarea><br>
+  <button name="Submit">Add Comment</button>
+</form>
+<br><br>
+<h3>Comments</h3>
+<ul>
+  <% @listing.comments.each do |comment| %>
+  <li>
+    "<%= comment.body %>"<br>by <%= (User.find(comment.commenter_id)).email %>
+      <% if (current_user.id == comment.commenter_id) || (current_user.id == @listing.owner_id)%>
+        <%= button_to "Remove Comment", listing_comment_url(@listing.id, comment.id), method: :delete %>
+      <% end %>
+  </li>
+  <% end %>
+</ul>

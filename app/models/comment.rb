@@ -1,11 +1,11 @@
 class Comment < ActiveRecord::Base
 
-  validates :lisitng_id, :commenter_id, :body, presence: true
+  validates :listing_id, :commenter_id, :body, presence: true
 
-  belongs_to( :listing,
+  belongs_to( :listings,
   class_name: "Listing",
   foreign_key: :listing_id,
-  primary_id: :id
+  primary_key: :id
   )
 
 end
