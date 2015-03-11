@@ -38,7 +38,7 @@ to phase 2.
 ### Phase 2: Viewing and Commenting on Adoption Listings (~2 days)
 I will add API routes to serve adoption listing data as JSON, then add Backbone
 models and collections that fetch data from those routes. By the end of this
-phase, users will be able to create adoption listings as well as and view listings and make comments on listings, all
+phase, users will be able to create adoption listings as well as view listings and make comments on listings, all
 inside a single Backbone app.
 
 [Details][phase-two]
