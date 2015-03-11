@@ -46,7 +46,7 @@ inside a single Backbone app.
 ### Phase 3: Editing/Displaying Adoption Listings and Geolocation (~2 days)
 I plan to use third-party libraries to add functionality to the `ListingForm` and
 `ListingShow` views in this phase.  I plan to integrate Filepicker for file upload so
-users can upload images of the pet with each listing. I also plan on integrating the Google Maps for Rails gem to show the location of the pet. Combined with the Ruby Geocoder gem, users can be directed to nearby pets without even enterting their location.
+users can upload images of the pet with each listing. I also plan on integrating the Google Maps for Rails gem to show the location of the pet. Combined with the Ruby Geocoder gem, users can be directed to nearby pets without even entering their location.
 
 [Details][phase-three]
 

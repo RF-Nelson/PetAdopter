@@ -52,6 +52,6 @@
       <% if (current_user.id == comment.commenter_id) || (current_user.id == @listing.owner_id)%>
         <%= button_to "Remove Comment", listing_comment_url(@listing.id, comment.id), method: :delete %>
       <% end %>
-  </li>
+  </li><br>
   <% end %>
 </ul>
