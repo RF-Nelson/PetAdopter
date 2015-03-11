@@ -40,6 +40,7 @@ gem 'spring',        group: :development
 
 # All gems added by me are below this line
 gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'backbone-on-rails'
 
 group :development do
   gem 'better_errors'
