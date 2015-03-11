@@ -12,8 +12,8 @@ PetAdopter is a clone of PetFinder built on Rails and Backbone. Users can:
 - [x] Create accounts
 - [x] Create sessions (log in)
 - [x] Create adoption listings
+- [x] Comment on adoption listings
 - [ ] Create a profile
-- [ ] Comment on adoption listings
 - [ ] Search adoption listings by name
 - [ ] Filter adoption listings by location, species, breed, age, and gender
 
@@ -74,4 +74,3 @@ Backbone side, there will be a `SearchResults` view that will fetch from the new
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-

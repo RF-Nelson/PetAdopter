@@ -58,3 +58,7 @@ group :test do
 end
 
 gem 'rails_12factor'
+
+group :test do
+  gem "shoulda-matchers"
+end
