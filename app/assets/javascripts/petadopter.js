@@ -7,7 +7,3 @@ window.Petadopter = {
     alert('Hello from Backbone!');
   }
 };
-
-$(document).ready(function(){
-  Petadopter.initialize();
-});

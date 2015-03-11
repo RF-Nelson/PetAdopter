@@ -1,13 +1,13 @@
-class ListingsController < ApplicationController
+class Api::ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    render :index
+    render json: @listings
   end
 
   def show
     @listing = Listing.find(params[:id])
-    render :show
+    render json: @listing, include: :comments
   end
 
   def new
