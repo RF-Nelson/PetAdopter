@@ -1,0 +1,6 @@
+<h3>Comments</h3>
+<ul>
+  <% comments.each(function (comment) { %>
+    <li><%= comment.escape('body') %></li>
+  <% }) %>
+</ul>

@@ -9,6 +9,8 @@ Petadopter.Routers.Router = Backbone.Router.extend({
     "listings/new": 'new',
     "listings/:id/edit": 'edit',
     "listings/:id": 'show'
+    // "listings/:listing_id/comments/:id": "comment"
+
   },
 
   index: function () {
@@ -38,7 +40,7 @@ Petadopter.Routers.Router = Backbone.Router.extend({
   show: function (id) {
     var post = Petadopter.Collections.listings.getOrFetch(id)
     var view = new Petadopter.Views.ListingShow({
-      model: post
+      model: post, $rootEl: this.$rootEl
     })
     this.$rootEl.append(view.render().$el)
     // this._swapView(view)
@@ -48,6 +50,11 @@ Petadopter.Routers.Router = Backbone.Router.extend({
     this._currentView && this._currentView.remove()
     this._currentView = view
     this.$rootEl.html(view.render().$el)
-  }
+  },
+
+  // comment: function (listingId, commentId) {
+  //   var comment = this.listings.getOrFetchComment(listingId, commentId)
+  //
+  // }
 
 });
