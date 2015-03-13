@@ -8,7 +8,9 @@
   <%= csrf_meta_tags %>
 </head>
 <h1><strong>PetAdopter</strong></h1>
+<%= render 'layouts/header' %>
 <%= render '/layouts/errors' %>
+
 
 <% if signed_in? %>
   <br>Hello, <%= current_user.email %>!

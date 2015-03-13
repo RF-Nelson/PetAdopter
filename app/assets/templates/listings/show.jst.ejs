@@ -3,7 +3,11 @@
 <div id="dialog" title="<%= listing.escape('pet_name') %>">
   <p>
     <strong>Species: </strong><%= listing.escape('species') %><br>
-    <strong>Location: </strong><%= listing.escape('location') %><br><br>
+    <strong>Location: </strong><%= listing.escape('location') %><br>
+    <% if (listing.escape('breed') !== null)  { %>
+        <strong>Breed: </strong><%= listing.escape('breed') %><br>
+    <% } %>
+    <br>
     <strong>Description: </strong><%= listing.escape('body') %>
     </p>
 
