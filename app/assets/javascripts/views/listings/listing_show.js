@@ -41,5 +41,5 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
     // this.$el.html(view)
     return this
   }
-  
+
 })

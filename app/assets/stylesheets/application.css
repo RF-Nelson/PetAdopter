@@ -21,7 +21,7 @@
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
-fieldset, label, textarea,
+fieldset, label,
 span, article, footer, time, small {
   margin: 0;
   padding: 0;
@@ -60,6 +60,7 @@ body {
 body .listing:hover {
   background: #b0ed92;
   font-weight: 600;
+  cursor: pointer;
 }
 
 body .all_listings {
@@ -68,8 +69,11 @@ body .all_listings {
 }
 
 body .listings_header {
+  display: block;
+  /*margin: 0 auto;*/
   font-weight: 300px;
   font-size: 24px;
+  /*margin-right: 210px;*/
   text-align: center;
 }
 
@@ -103,6 +107,7 @@ body .listings_header {
 
 .header a {
   text-decoration: underline;
+  cursor: hand;
 }
 
 .header button {
@@ -114,6 +119,28 @@ body .listings_header {
   font-size: 12px;
   padding: 5px 10px 5px 10px;
   text-decoration: none;
+}
+
+.header button:hover {
+  cursor: pointer;
+}
+
+.nlist .new_listing {
+  background: #3498db;
+  border-radius: 28px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+}
+
+.new_listing:hover {
+  cursor: pointer;
 }
 
 .header .sign_in {
@@ -141,6 +168,11 @@ body .listings_header {
   opacity: 1;
 }
 
+/*.nlist {
+  text-align: center;
+  margin: 0 auto;
+    float: left;
+}*/
 
 
 /*.logo:hover {

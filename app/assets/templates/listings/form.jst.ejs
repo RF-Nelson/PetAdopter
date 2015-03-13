@@ -1,1 +1,34 @@
-LISTING FORM PLACEHOLDER
+<div id="new_listing" title="<%= listing.isNew() ? 'New Listing' : 'Edit Listing' %>">
+
+  <label>Pet's Name
+  <input type="text" id="pet_name" name="pet_name" value="<%= listing.pet_name %>">
+</label><br><br>
+
+  <label>Species
+    <select id="species" name="species">
+      <option>Cat</option>
+      <option>Dog</option>
+      <option>Bird</option>
+      <option>Rodent</option>
+      <option>Reptile</option>
+      <option>Human</option>
+    </select>
+  </label><br><br>
+
+  <label>Breed
+  <input id="breed" type="text" name="breed" value="<%= listing.breed %>">
+</label><br><br>
+
+  <label>Age
+  <input id="age" type="text" name="age" value="<%= listing.age %>">
+</label><br><br>
+
+  <label>Location
+  <input id="location" type="text" name="location" value="<%= listing.location %>">
+</label><br><br>Description<br>
+
+  <label>
+    <textarea id="body" name="body" rows="6" cols="40"></textarea>
+  </label><br>
+
+</div>

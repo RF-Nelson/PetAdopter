@@ -3,11 +3,12 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
   template: JST['listings/index'],
 
   initialize: function () {
-    this.listenTo(this.collection, 'sync', this.render)
+    this.listenTo(this.collection, 'sync add change', this.render)
   },
 
   events: {
-    'click .listing': 'goToListing'
+    'click .listing': 'goToListing',
+    'click .new_listing': 'newListing'
   },
 
   render: function () {
@@ -20,6 +21,10 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
     var $target = $(event.currentTarget)
     var id = $target.attr('data-id')
     Backbone.history.navigate("listings/" + id, {trigger: true})
+  },
+
+  newListing: function () {
+    Backbone.history.navigate("listings/new", {trigger: true})
   }
 
 });
