@@ -52,7 +52,7 @@ span, article, footer, time, small {
 
 body {
   font-family: 'Coming Soon', cursive;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   background: #f2fced;
 }
@@ -64,6 +64,7 @@ body .listing:hover {
 
 body .all_listings {
   margin: 50px;
+  padding-left: 100px;
 }
 
 body .listings_header {
@@ -126,6 +127,18 @@ body .listings_header {
   padding-right: 10px;
   padding-bottom: 5px;
   font-family: 'Georgia', serif;
+}
+
+.click2c {
+  float: right;
+  padding-bottom: 20px;
+  color: red;
+  /*float: right;*/
+  opacity: 0;
+}
+
+.listing:hover .click2c {
+  opacity: 1;
 }
 
 
