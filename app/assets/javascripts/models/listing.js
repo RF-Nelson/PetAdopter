@@ -15,6 +15,12 @@ Petadopter.Models.Listing = Backbone.Model.extend({
       this.comments().set(response.comments, {parse: true})
       delete response.comments
     }
+
+    if (response.current_user) {
+      this.set({current_user: response.current_user})
+      delete response.current_user
+    }
+
     return response
   }
 
