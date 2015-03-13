@@ -1,0 +1,42 @@
+<div class="header">
+
+  <h1 class=logo>PetAdopter</h1>
+
+    <% if signed_in? %>
+
+    <div class="authed">
+      Hello, <%= current_user.email %><br><br>
+      <form class='auth_form' action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button class="sign_out" name="Sign Out">Sign Out</button>
+      </form>
+    </div>
+
+    <% else %>
+
+    <div class="auth">
+      <br>
+      <form class='auth_form' action="<%= session_url %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+        <label>E-mail
+        <input type="text" name="user[email]" value="">
+        </label>
+
+        <label>Password
+        <input type="password" name="user[password]" value="">
+        </label>
+
+        <button name="Sign In">Sign In</button>
+      </form>
+      <br>
+      <section class='sign_in'>
+        Don't have an account yet? <a href="/users/new">Sign Up!</a>
+      </section>
+
+    </div>
+  <% end %>
+
+
+</div>

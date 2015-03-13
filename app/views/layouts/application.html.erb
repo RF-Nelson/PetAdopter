@@ -2,29 +2,22 @@
 <html>
 <head>
   <title>PetAdopter</title>
+  <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
 
   <%= csrf_meta_tags %>
 </head>
-<h1><strong>PetAdopter</strong></h1>
-<%= render 'layouts/header' %>
+
+<%= yield :header %>
+
 <%= render '/layouts/errors' %>
-
-
-<% if signed_in? %>
-  <br>Hello, <%= current_user.email %>!
-  <form action="<%= session_url %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <button name="Sign Out">Sign Out</button>
-  </form>
-  <br>
-<% end %>
 
 <body>
 
 <%= yield %>
 
 </body>
+
 </html>

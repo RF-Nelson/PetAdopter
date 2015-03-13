@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
   def new
     if signed_in?
       redirect_to root_url
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out(current_user)
-    redirect_to new_session_url
+    redirect_to root_url
   end
 
 end

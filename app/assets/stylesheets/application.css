@@ -16,3 +16,120 @@
  *= require_jquery-ui.structure.css
  *= require_jquery-ui.theme.css
  */
+
+/* RESET */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+
+/* CLEARFIX */
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+
+
+/* STYLING */
+
+body {
+  font-family: 'Coming Soon', cursive;
+  font-size: 16px;
+  font-weight: 400;
+  background: #f2fced;
+}
+
+body .listing:hover {
+  background: #b0ed92;
+  font-weight: 600;
+}
+
+body .all_listings {
+  margin: 50px;
+}
+
+body .listings_header {
+  font-weight: 300px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.logo {
+  color: green;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 36px;
+  font-weight: 500;
+  float: left;
+  margin: 18px;
+}
+
+.header {
+  display: block;
+  background: #dae0f1;
+  border-bottom: 2px solid #ced5ed;
+  min-height: 85px;
+}
+
+.auth {
+  float: right;
+  padding-top: 5px;
+  font-family: 'Georgia', serif;
+}
+
+.auth_form {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+.header a {
+  text-decoration: underline;
+}
+
+.header button {
+  background: #3498db;
+  border-radius: 28px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.header .sign_in {
+  float: right;
+  padding-right: 18px;
+}
+
+.header .authed {
+  float: right;
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  font-family: 'Georgia', serif;
+}
+
+
+
+/*.logo:hover {
+  background: #d4b8f4;
+}*/

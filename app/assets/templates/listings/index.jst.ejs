@@ -1,12 +1,14 @@
-<h2>Adoption Listings</h2>
-<br>
-<ul>
+<h2 class="listings_header">Adoption Listings</h2>
+<ul class='all_listings'>
   <% listings.each(function (listing) {  %>
     <li>
       <ul class='listing' data-id='<%= listing.get('id') %>'>
-        <li>Species: <%= listing.escape('species') %></li>
-        <li>Pet Name: <%= listing.escape('pet_name') %></li>
-        <li>Location: <%= listing.escape('location') %></li>
+        <li><strong>Animal: </strong><%= listing.escape('species') %></li>
+        <li><strong>Pet Name: </strong><%= listing.escape('pet_name') %></li>
+        <% if (listing.escape('breed') !== "")  { %>
+            <li><strong>Breed: </strong><%= listing.escape('breed') %></li>
+        <% } %>
+        <li><strong>Location: </strong><%= listing.escape('location') %></li>
       </ul>
     </li>
     <br>
