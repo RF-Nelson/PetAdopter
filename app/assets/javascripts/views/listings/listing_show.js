@@ -7,9 +7,11 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
     this.comments = this.model.comments()
     this.modelId = this.model.id
     this.$rootEl = options.$rootEl
-    this.listenTo(this.comments, 'sync add', function () {
+    this.listenTo(this.comments, 'all', function () {
       var $dialogBox = $("div#dialog-" + this.modelId)
-      $dialogBox.append(this.commentsTemplate({ comments:this.comments }))
+      var $comments = $dialogBox.children(".comments")
+      $comments.html("")
+      $comments.html(this.commentsTemplate({ comments:this.comments }))
     })
   },
 

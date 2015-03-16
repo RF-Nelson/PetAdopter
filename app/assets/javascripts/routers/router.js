@@ -40,11 +40,17 @@ Petadopter.Routers.Router = Backbone.Router.extend({
 
   show: function (id) {
     var post = Petadopter.Collections.listings.getOrFetch(id)
-    var view = new Petadopter.Views.ListingShow({
-      model: post, $rootEl: this.$rootEl
-    })
-    this.$rootEl.append(view.render().$el)
-    // this._swapView(view)
+    var $dialogBox = $("div#dialog-" + id)
+    var that = this
+    if ($dialogBox.length === 0) {
+      var view = new Petadopter.Views.ListingShow({
+        model: post, $rootEl: that.$rootEl
+      })
+      that.$rootEl.append(view.render().$el)
+    } else {
+      $dialogBox.parents(".ui-dialog").effect("shake", "slow")
+      Backbone.history.navigate("", {trigger: true})
+    }
   },
 
   _swapView: function (view) {
