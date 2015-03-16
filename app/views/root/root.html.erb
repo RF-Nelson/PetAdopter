@@ -4,5 +4,7 @@
 
 <div id="content"></div>
 <script type="text/javascript" charset="utf-8">
-  $(Petadopter.initialize);
+  $(Petadopter.initialize({
+    user_id: <%= current_user.try(:id) || "null" %>
+  }));
 </script>

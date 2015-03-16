@@ -3,7 +3,8 @@ window.Petadopter = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function() {
+  initialize: function(options) {
+    this.currentUserId = options.user_id
     new Petadopter.Routers.Router({
       $rootEl: $("#content")
     })

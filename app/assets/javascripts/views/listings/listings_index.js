@@ -3,7 +3,7 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
   template: JST['listings/index'],
 
   initialize: function () {
-    this.listenTo(this.collection, 'sync add change', this.render)
+    this.listenTo(this.collection, 'sync add change remove', this.render)
   },
 
   events: {
@@ -12,7 +12,7 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
   },
 
   render: function () {
-    var view = this.template({ listings: this.collection })
+    var view = this.template({ listings: this.collection, userId: Petadopter.currentUserId })
     this.$el.html(view)
     return this
   },

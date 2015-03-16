@@ -18,10 +18,9 @@ class Api::ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     if @listing.save
-      redirect_to listing_url(@listing.id)
+      render json: @listing
     else
-      flash.now[:errors] = @listing.errors.full_messages
-      render :new
+      render json: @listing.errors.full_messages, status: 422
     end
   end
 
@@ -33,10 +32,12 @@ class Api::ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     if @listing.update(listing_params)
-      redirect_to listing_url(@listing.id)
+      render json: @listing
+      # redirect_to listing_url(@listing.id)
     else
-      flash.now[:errors] = Listing.new(listing_params).errors.full_messages
-      render :edit
+      render json: Listing.new(listing_params).errors.full_messages, status: 422
+      # flash.now[:errors] = Listing.new(listing_params).errors.full_messages
+      # render :edit
     end
   end
 

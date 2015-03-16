@@ -1,8 +1,13 @@
 <br>
+
 <h2 class="listings_header">Adoption Listings</h2>
+
+<% if (userId !== null) { %>
   <div class="nlist">
     <button class="new_listing" name="Create New Listing">Create New Listing</button>
   </div>
+<% } %>
+
 <ul class='all_listings'>
   <% listings.each(function (listing) {  %>
     <li>
