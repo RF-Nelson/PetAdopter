@@ -168,6 +168,10 @@ body .listings_header {
   opacity: 1;
 }
 
+.ui-effects-transfer {
+    border: 1px dotted black;
+}
+
 /*.nlist {
   text-align: center;
   margin: 0 auto;
