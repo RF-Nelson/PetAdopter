@@ -14,12 +14,12 @@
   <% listings.each(function (listing) {  %>
     <li class='listingitem'>
       <ul class='listing' data-id='<%= listing.get('id') %>'>
-        <li><strong>Animal: </strong><%= listing.escape('species') %></li>
-        <li><strong>Pet Name: </strong><%= listing.escape('pet_name') %></li>
+        <li><strong class="attr">Animal: </strong><%= listing.escape('species') %></li>
+        <li><strong class="attr">Pet Name: </strong><%= listing.escape('pet_name') %></li>
         <% if (listing.escape('breed') !== "")  { %>
-            <li><strong>Breed: </strong><%= listing.escape('breed') %></li>
+            <li><strong class="attr">Breed: </strong><%= listing.escape('breed') %></li>
         <% } %>
-        <li><strong>Location: </strong><%= listing.escape('location') %></li>
+        <li><strong class="attr">Location: </strong><%= listing.escape('location') %></li>
         <section class="click2c">Click for more details about <%= listing.escape('pet_name') %></section>
       </ul>
     </li>

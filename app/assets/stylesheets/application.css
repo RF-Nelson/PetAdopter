@@ -78,7 +78,14 @@ body .listing {
   position: relative;
   padding: 30px;
   text-align: center;
+  border: 1px solid #ccc;
+  width: 600px;
+  margin-left: 120px;
   /*border-bottom: 1px solid #ccc;*/
+}
+
+body .listing .attr {
+  color: #827acd;
 }
 
 .ui-dialog {
@@ -95,8 +102,8 @@ body .listing li {
 }
 
 body .all_listings {
-  width: 600px;
-  margin: auto;
+  /*width: 600px;
+  margin: auto;*/
   padding-left: 100px;
 }
 
@@ -215,7 +222,7 @@ body .listings_header {
 }
 
 .ui-effects-transfer {
-  border: 2px dotted red;
+  border: 2px dashed #ccc;
 }
 
 .signup {
