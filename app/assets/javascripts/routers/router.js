@@ -40,21 +40,14 @@ Petadopter.Routers.Router = Backbone.Router.extend({
 
   show: function (id) {
     var post = Petadopter.Collections.listings.getOrFetch(id)
-    var $dialogBox = $("div#dialog-" + id)
+
     var that = this
-    if ($dialogBox.length === 0) {
 
-      var view = new Petadopter.Views.ListingShow({
-        model: post, $rootEl: that.$rootEl
-      })
-      that.$rootEl.append(view.render().$el)
-      $('[data-id="' + id + '"]').effect("transfer", { to: $("div#dialog-" + id) }, 800)
-
-    } else {
-      $dialogBox.parents(".ui-dialog").effect("shake", "slow")
-
-      // Backbone.history.navigate("", {trigger: true, replace: true})
-    }
+    var view = new Petadopter.Views.ListingShow({
+      model: post, $rootEl: that.$rootEl
+    })
+    that.$rootEl.append(view.render().$el)
+    $('[data-id="' + id + '"]').effect("transfer", { to: $("div#dialog-" + id) }, 800)
   },
 
   _swapView: function (view) {

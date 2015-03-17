@@ -20,7 +20,12 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
   goToListing: function (event) {
     var $target = $(event.currentTarget)
     var id = $target.attr('data-id')
-    Backbone.history.navigate("listings/" + id, {trigger: true})
+    var $dialogBox = $("div#dialog-" + id)
+    if ($dialogBox.length === 0) {
+      Backbone.history.navigate("listings/" + id, {trigger: true})
+    } else {
+      $dialogBox.parents(".ui-dialog").effect("shake", "slow")
+    }
   },
 
   newListing: function () {
