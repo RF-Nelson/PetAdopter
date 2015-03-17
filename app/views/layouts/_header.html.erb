@@ -20,12 +20,12 @@
       <form class='auth_form' action="<%= session_url %>" method="post">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-        <label>E-mail
-        <input type="text" name="user[email]" value="">
+        <label>E-mail:
+        <input type="text" placeholder="E-Mail Address" name="user[email]" value="">
         </label>
 
-        <label>Password
-        <input type="password" name="user[password]" value="">
+        <label>Password:
+        <input type="password" placeholder="Password" name="user[password]" value="">
         </label>
 
         <button name="Sign In">Sign In</button>

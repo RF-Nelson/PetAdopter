@@ -41,6 +41,10 @@ span, article, footer, time, small {
   background: transparent;
 }
 
+ul, li {
+  list-style: none;
+}
+
 
 /* CLEARFIX */
 
@@ -58,18 +62,32 @@ span, article, footer, time, small {
 body {
   font-family: 'Coming Soon', cursive;
   font-size: 18px;
-  font-weight: 400;
   background: #f2fced;
 }
 
 body .listing:hover {
   background: #b0ed92;
-  font-weight: 600;
   cursor: pointer;
+  border-radius: 45%;
+  border: 2px solid #8fac8b;
+}
+
+body .listing {
+  display: block;
+  float: left;
+  position: relative;
+  padding: 30px;
+  text-align: center;
+}
+
+body .listing li {
+  float: left;
+  padding: 10px;
 }
 
 body .all_listings {
-  margin: 50px;
+  width: 600px;
+  margin: auto;
   padding-left: 100px;
 }
 
@@ -95,6 +113,7 @@ body .listings_header {
   display: block;
   background: #dae0f1;
   border-bottom: 2px solid #ced5ed;
+  font-weight: 400px;
   min-height: 85px;
 }
 
@@ -120,6 +139,7 @@ body .listings_header {
   border-radius: 28px;
   text-shadow: 1px 1px 3px #666666;
   font-family: Georgia;
+  font-weight: 400px;
   color: #ffffff;
   font-size: 12px;
   padding: 5px 10px 5px 10px;
@@ -141,6 +161,7 @@ body .listings_header {
   padding: 5px 10px 5px 10px;
   text-decoration: none;
   display: block;
+  font-weight: 400;
   width: 120px;
   margin: 0 auto;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
@@ -171,10 +192,12 @@ body .listings_header {
 }
 
 .click2c {
-  float: right;
   padding-bottom: 20px;
+  position: absolute;
+  bottom: -10px;
+  left: 105px;
   color: red;
-  /*float: right;*/
+  float: right;
   opacity: 0;
 }
 

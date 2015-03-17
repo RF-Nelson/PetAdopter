@@ -1,19 +1,31 @@
-<h2>Sign In</h2>
-<br>
+<div class="header">
+  <h1 class=logo>PetAdopter</h1>
+</div>
 
-<form action="<%= session_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<div class="signup">
 
-  <label>E-mail
-  <input type="text" name="user[email]" value="">
-  </label>
+  <h2>Please Try Again...</h2>
+  <br>
+  <br>
 
-  <label>Password
-  <input type="password" name="user[password]" value="">
-  </label>
+  <form  class="signupauth" action="<%= session_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <button name="Sign In">Sign In</button>
+    <label>E-mail:
+    <input type="text" name="user[email]" placeholder="E-Mail Address" value="">
+    </label>
 
-</form><br><br>
+    <label>Password:
+    <input type="password" name="user[password]" placeholder="Password" value="">
+    </label>
 
-<a href="/users/new">Sign Up if you don't have an account!</a>
+    <br><br>
+    <button class="signupbutton" name="Sign In">Sign In</button>
+
+  </form>
+
+  <br><br>
+  <div class="signupauth">
+    Don't have an account? <strong><a href="/users/new">Sign up for one</a></strong>
+  </div>
+</div>
