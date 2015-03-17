@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def new
     if signed_in?
-      redirect_to listings_url
+      redirect_to "/#"
     else
       @user = User.new
       render :new

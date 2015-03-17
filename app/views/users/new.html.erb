@@ -1,21 +1,32 @@
-<h1>PetAdopter</h1>
+<div class="header">
 
-<h2>Sign Up</h2>
-<br>
+  <h1 class=logo>PetAdopter</h1>
+</div>
 
-<form action="<%= users_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<div class="signup">
 
-  <label>E-mail
-  <input type="text" name="user[email]" value="">
-  </label>
+  <h2>Sign Up for a PetAdopter Account</h2>
+  <br>
+  <br>
 
-  <label>Password
-  <input type="password" name="user[password]" value="">
-  </label>
+  <form  class="signupauth" action="<%= users_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <button name="Sign Up">Sign Up</button>
+    <label>E-mail:
+    <input type="text" name="user[email]" value="">
+    </label>
 
-</form>
-<br><br><br>
-Already have an account? <strong><a href="/">Sign in at the top of our homepage!</a></strong>
+    <label>Password:
+    <input type="password" name="user[password]" value="">
+    </label>
+
+    <br><br>
+    <button class="signupbutton" name="Sign Up">Sign Up</button>
+
+  </form>
+
+  <br><br>
+  <div class="signupauth">
+    Already have an account? <strong><a href="/">Sign in at the top of our homepage</a></strong>
+  </div>
+</div>
