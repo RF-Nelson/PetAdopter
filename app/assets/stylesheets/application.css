@@ -60,7 +60,7 @@ ul, li {
 /* STYLING */
 
 body {
-  font-family: 'Coming Soon', cursive;
+  font-family: 'Bitter', serif;
   font-size: 18px;
   background: #f2fced;
 }
@@ -78,7 +78,16 @@ body .listing {
   position: relative;
   padding: 30px;
   text-align: center;
+  /*border-bottom: 1px solid #ccc;*/
 }
+
+.ui-dialog {
+  font-family: 'Bitter', serif;
+}
+
+/*.listingitem {
+  border-bottom: 1px solid #ccc;
+}*/
 
 body .listing li {
   float: left;

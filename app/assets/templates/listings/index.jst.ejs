@@ -12,7 +12,7 @@
 
 <ul class='all_listings'>
   <% listings.each(function (listing) {  %>
-    <li>
+    <li class='listingitem'>
       <ul class='listing' data-id='<%= listing.get('id') %>'>
         <li><strong>Animal: </strong><%= listing.escape('species') %></li>
         <li><strong>Pet Name: </strong><%= listing.escape('pet_name') %></li>
