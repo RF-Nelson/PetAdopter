@@ -3,12 +3,14 @@
 <div id="dialog" title="<%= listing.escape('pet_name') %>">
   <p>
     <strong>Animal: </strong><%= listing.escape('species') %><br>
-    <strong>Location: </strong><%= listing.escape('location') %><br>
+    <section class="location">
+      <strong>Location: </strong><%= listing.escape('location') %><br>
+    </section>
     <% if (listing.escape('breed') !== "")  { %>
         <strong>Breed: </strong><%= listing.escape('breed') %><br>
     <% } %>
     <% if (listing.escape('age') !== "")  { %>
-        <strong>Age: </strong><%= listing.escape('age') %><br>
+        <strong class="age">Age: </strong><%= listing.escape('age') %><br>
     <% } %>
     <br>
     <strong>Description: </strong><%= listing.escape('body') %>
