@@ -343,6 +343,14 @@ textarea {
   margin-top: 25px;
 }
 
+.listingBody {
+  margin: 12px;
+}
+
+.cell {
+  color: #6833db;
+  padding-left: 30px;
+}
 .comments-header {
   font-family: 'Amatic SC', cursive;
   font-size: 36px;
@@ -357,7 +365,7 @@ textarea {
   padding: 12px;
   margin-bottom: 15px;
   border-radius: 6px;
-  box-shadow: 3px 3px, -1em 0 0.4em #ccc;
+  box-shadow: 3px 3px, -0.8em 0 0.4em #ccc;
 }
 
 /*div .ui-icon-closethick {

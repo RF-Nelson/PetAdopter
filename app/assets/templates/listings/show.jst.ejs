@@ -1,20 +1,35 @@
 <div id="dialog" title="<%= listing.escape('pet_name') %>">
-  
-    <strong>Animal:     </strong><%= listing.escape('species') %><br>
-    <section class="location">
-      <strong>Location:  </strong><%= listing.escape('location') %><br>
-    </section>
-    <% if (listing.escape('breed') !== "")  { %>
-        <strong>Breed:       </strong><%= listing.escape('breed') %><br>
-    <% } %>
-    <% if (listing.escape('age') !== "")  { %>
-        <strong class="age">Age:       </strong><%= listing.escape('age') %><br>
-    <% } %>
-    <br>
+
+    <table class="table">
+      <tr>
+        <td>Name:</td>
+        <td class="cell"><%= listing.escape('pet_name') %></td>
+      </tr>
+      <tr>
+        <td>Animal Type:</td>
+        <td class="cell"><%= listing.escape('species') %></td>
+      </tr>
+      <% if (listing.escape('breed') !== "")  { %>
+        <tr>
+          <td>Breed:</td>
+          <td class="cell"><%= listing.escape('breed') %></td>
+        </tr>
+      <% } %>
+      <% if (listing.escape('age') !== "")  { %>
+        <tr>
+          <td>Age:</td>
+          <td class="cell"><%= listing.escape('age') %></td>
+        </tr>
+      <% } %>
+      <tr>
+        <td>Location:</td>
+        <td class="cell"><%= listing.escape('location') %></td>
+      </tr>
+    </table>
+
     <section class="listingBody">
       <%= listing.escape('body') %>
     </section>
-
 
   <% if (userId !== null) { %>
     <section class="addComment">
