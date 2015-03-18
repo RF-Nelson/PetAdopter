@@ -22,9 +22,9 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
   // and replace it with a new dialog box made for editing comments
   dialogButtons: function () {
     var that = this;
-
-    if (Petadopter.currentUserId === this.modelId) {
+    if (Petadopter.currentUserId === this.model.get("owner_id")) {
       return {"Edit Listing": function () {
+
         var $boxContent = $("div#dialog-" + that.modelId)
         $boxContent.parent().remove()
         Backbone.history.navigate("listings/" + that.modelId + "/edit", {trigger: true})
