@@ -1,7 +1,6 @@
-  <br>
-  <h4>Comments</h4>
-  <ul>
+  <article class="comments-header">Comments</article>
+  <ul class="comments-list">
     <% comments.each(function (comment) { %>
-      <li><%= comment.escape('body') %></li>
+      <li class="comment"><%= comment.escape('body') %></li>
     <% }) %>
   </ul>

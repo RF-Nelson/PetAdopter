@@ -63,7 +63,7 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
     // $("body").scroll(function(e){ e.preventDefault()});
     // $('body').addClass('stop-scrolling')
     var pos = $(window).scrollTop()
-    // Backbone.history.navigate("", {trigger: true})
+    Backbone.history.navigate("", {trigger: true})
     $(window).scrollTop(pos)
     var that = this
     var view = this.template({
@@ -92,11 +92,17 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
         var attrs = dialog.serializeJSON()
         // debugger
         var comment = new Petadopter.Models.Comment()
+        var thatthis = this
         comment.set(attrs)
         comment.save({}, {
           success: function () {
-            that.comments.add(that.model, {merge: true})
+            that.comments.add(comment, {merge: true})
             $(".addComment").hide( "clip", 400 )
+            // var $dialogBox = $("div#dialog-" + that.modelId)
+            // var $comments = $dialogBox.children(".comments")
+            // $comments.html("")
+            // $comments.html(that.commentsTemplate({ comments:that.comments }))
+            // debugger
           }
         });
       })
@@ -109,6 +115,10 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
     this.el.attr("id", "dialog-" + this.model.id)
     // this.$el.html(view)
     return this
+  },
+
+  refreshComments: function () {
+
   }
 
 })

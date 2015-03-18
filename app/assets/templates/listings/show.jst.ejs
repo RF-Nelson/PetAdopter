@@ -1,21 +1,20 @@
 <div id="dialog" title="<%= listing.escape('pet_name') %>">
-  <p>
-    <strong>Animal: </strong><%= listing.escape('species') %><br>
+  
+    <strong>Animal:     </strong><%= listing.escape('species') %><br>
     <section class="location">
-      <strong>Location: </strong><%= listing.escape('location') %><br>
+      <strong>Location:  </strong><%= listing.escape('location') %><br>
     </section>
     <% if (listing.escape('breed') !== "")  { %>
-        <strong>Breed: </strong><%= listing.escape('breed') %><br>
+        <strong>Breed:       </strong><%= listing.escape('breed') %><br>
     <% } %>
     <% if (listing.escape('age') !== "")  { %>
-        <strong class="age">Age: </strong><%= listing.escape('age') %><br>
+        <strong class="age">Age:       </strong><%= listing.escape('age') %><br>
     <% } %>
     <br>
     <section class="listingBody">
       <%= listing.escape('body') %>
     </section>
-  </p>
-  <br>
+
 
   <% if (userId !== null) { %>
     <section class="addComment">

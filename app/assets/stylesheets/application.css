@@ -322,6 +322,7 @@ input {
   font-size: 13px;
   padding: 8px 18px 8px 18px;
   text-decoration: none;
+  margin: 5px;
 }
 
 .addComment button:hover {
@@ -332,6 +333,31 @@ input {
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
+  cursor: pointer;
+}
+
+textarea {
+  border-radius: 6px;
+  background: #eee;
+  box-shadow: 2px 1px, -0.4em 0 0.2em #ccc;
+  margin-top: 25px;
+}
+
+.comments-header {
+  font-family: 'Amatic SC', cursive;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  padding-right: 30px;
+  padding-bottom: 10px;
+}
+
+.comment {
+  background: #e3e3e3;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 3px 3px, -1em 0 0.4em #ccc;
 }
 
 /*div .ui-icon-closethick {
