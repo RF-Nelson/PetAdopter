@@ -11,7 +11,11 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
       var $dialogBox = $("div#dialog-" + this.modelId)
       var $comments = $dialogBox.children(".comments")
       $comments.html("")
-      $comments.html(this.commentsTemplate({ comments:this.comments }))
+      $comments.html(this.commentsTemplate({
+        comments: this.comments,
+        userId: Petadopter.currentUserId,
+        listerId: this.model.get("owner_id")
+      }))
     })
   },
 
