@@ -1,4 +1,4 @@
-# pet-adopter
+# PetAdopter
 
 [Heroku link][heroku]
 
