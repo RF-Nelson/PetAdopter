@@ -68,7 +68,7 @@ body {
 body .listing:hover {
   background: #b0ed92;
   cursor: pointer;
-  border-radius: 45%;
+  border-radius: 6px;
   border: 2px solid #8fac8b;
   padding: 29px 30px;
 }
