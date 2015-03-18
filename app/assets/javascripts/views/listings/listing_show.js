@@ -15,11 +15,9 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
     })
   },
 
-  // this function creates an "Edit Listing" button on the dialog box
-  // if the current user originally created the listing.
-  // Below I started to replace the existing dialog content with the
-  // edit form but I think it would be easier to remove the dialog box
-  // and replace it with a new dialog box made for editing comments
+
+  // this function creates buttons depending upon if the listing
+  // was created by the current user
   dialogButtons: function () {
     var that = this;
     if (Petadopter.currentUserId === this.model.get("owner_id")) {
@@ -65,13 +63,14 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
     // $("body").scroll(function(e){ e.preventDefault()});
     // $('body').addClass('stop-scrolling')
     var pos = $(window).scrollTop()
-    Backbone.history.navigate("", {trigger: true})
+    // Backbone.history.navigate("", {trigger: true})
     $(window).scrollTop(pos)
     var that = this
     var view = this.template({
-      listing: this.model
+      listing: this.model,
+      userId: Petadopter.currentUserId
     })
-    $(view).dialog({
+    var dialog = $(view).dialog({
       height: 460, width: 620,
       position: { my: "center", at: "center", of: $('[data-id="'+ this.modelId +'"]')},
       show: {
@@ -86,6 +85,21 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
         effect: "clip",
         duration: 500
       }})
+
+      $(dialog).parent().on('click', '.combut', function () {
+        event.preventDefault();
+        var dialog = $(".newCommentForm")//.parent()
+        var attrs = dialog.serializeJSON()
+        // debugger
+        var comment = new Petadopter.Models.Comment()
+        comment.set(attrs)
+        comment.save({}, {
+          success: function () {
+            that.comments.add(that.model, {merge: true})
+            $(".addComment").hide( "clip", 400 )
+          }
+        });
+      })
 
       // setTimeout(function() {ackbone.history.navigate("", {trigger: true)}, 800)
 

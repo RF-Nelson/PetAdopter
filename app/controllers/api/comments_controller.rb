@@ -9,9 +9,11 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    listing = Listing.find(params[:listing_id])
-    comment = listing.comments.new(comment_params)
-    comment.commenter_id = current_user.id
+    # listing = Listing.find(params[:listing_id])
+    # comment = listing.comments.new(comment_params)
+    # comment.commenter_id = current_user.id
+    # debugger
+    comment = Comment.new(comment_params)
     comment.save
     if comment
       render :json => comment
@@ -22,7 +24,8 @@ class Api::CommentsController < ApplicationController
 
   def destroy
     comment = Comment.find(params[:id])
-    comment.destroy
+    comment.destroy if comment
+    render :json => {}
     # redirect_to listing_url(comment.listing_id)
   end
 

@@ -1,5 +1,3 @@
-
-
 <div id="dialog" title="<%= listing.escape('pet_name') %>">
   <p>
     <strong>Animal: </strong><%= listing.escape('species') %><br>
@@ -13,16 +11,29 @@
         <strong class="age">Age: </strong><%= listing.escape('age') %><br>
     <% } %>
     <br>
-    <strong>Description: </strong><%= listing.escape('body') %>
-    </p>
+    <section class="listingBody">
+      <%= listing.escape('body') %>
+    </section>
+  </p>
+  <br>
 
-    <section class="comments">
-
+  <% if (userId !== null) { %>
+    <section class="addComment">
+      <article class="commentForm">
+        <form class="newCommentForm">
+          <fieldset>
+            <input type="hidden" id="commenter_id" name="commenter_id" value="<%= userId %>">
+            <input type="hidden" id="listing_id" name="listing_id" value="<%= listing.id %>">
+            <textarea id="body" name="body" rows="3" cols="42" placeholder="Enter your comment here"></textarea><br>
+            <button class="combut" name="Add Comment">Add Comment</button>
+          </fieldset>
+        </form>
+      </article>
+  <% } %>
     </section>
 
-    <div id="dialog-confirm">
+    <section class="comments"></section>
 
-    </div>
-
+    <div id="dialog-confirm"></div>
 
 </div>

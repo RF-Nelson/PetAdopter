@@ -307,6 +307,33 @@ input {
   font-family: "Lucida Sans Unicode", sans-serif;
 }
 
+.addComment button {
+  background: #5d21cc;
+  background-image: -webkit-linear-gradient(top, #5d21cc, #8d8dec);
+  background-image: -moz-linear-gradient(top, #5d21cc, #8d8dec);
+  background-image: -ms-linear-gradient(top, #5d21cc, #8d8dec);
+  background-image: -o-linear-gradient(top, #5d21cc, #8d8dec);
+  background-image: linear-gradient(to bottom, #5d21cc, #8d8dec);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 8px 18px 8px 18px;
+  text-decoration: none;
+}
+
+.addComment button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
 /*div .ui-icon-closethick {
   position: relative;
   background-image: url(images/close.jpg);
