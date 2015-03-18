@@ -28,21 +28,32 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
         var $boxContent = $("div#dialog-" + that.modelId)
         $boxContent.parent().remove()
         Backbone.history.navigate("listings/" + that.modelId + "/edit", {trigger: true})
+        },
 
-        // var view = JST['listings/form']({ listing: that.model, userId: Petadopter.currentUserId })
-        // $boxContent.html(view)
-          // var attrs = $("#newListing").serializeJSON()
-          //
-          // that.model.set(attrs)
-          // that.model.save({}, {
-          //   success: function () {
-          //     that.collection.add(that.model, {merge: true})
-          //     $(dialog).dialog('close')
-          //   },
-          //   error: function () {
-          //     $("form#newListing").prepend("<h4 style='color:red'>Please make sure your new adoption listing has a Pet Name, Location, and Description.</h4></style>")
-          //   }
-          // })
+        "Remove Listing": function () {
+        $("#dialog-confirm").html("Are you sure you want to remove your adoption listing?")
+        $("#dialog-confirm").dialog({
+          resizable: false,
+          modal: true,
+          title: "Confirm listing deletion",
+          height: 220,
+          width: 400,
+          buttons: {
+            "Yes": function () {
+                $(this).dialog('close');
+                $(this).remove()
+                that.model.destroy()
+                $("div#dialog-" + that.modelId).parent().effect("puff")
+                setTimeout(function () {
+                  $("div#dialog-" + that.modelId).parent().remove()
+                }, 700)
+                // $("div#dialog-" + that.modelId).parent().remove()
+             },
+            "No": function () {
+                $(this).dialog('close');
+             }
+        }
+    });
         }
       }
     } else {

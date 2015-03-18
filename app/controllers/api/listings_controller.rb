@@ -42,9 +42,9 @@ class Api::ListingsController < ApplicationController
   end
 
   def destroy
-    listing = Listing.find(params[:id])
-    listing.destroy
-    redirect_to listings_url
+    @listing = Listing.find(params[:id])
+    @listing.destroy if @listing
+    render :json => {}
   end
 
   private
