@@ -15,7 +15,7 @@ Petadopter.Views.ListingForm = Backbone.View.extend({
         effect: "blind",
         duration: 1000
       },
-      buttons: {"Create Listing": function () {
+      buttons: {"Submit Listing": function () {
           var attrs = $("#newListing").serializeJSON()
 
           that.model.set(attrs)
@@ -45,7 +45,7 @@ Petadopter.Views.ListingForm = Backbone.View.extend({
     // })
 
 
-    Backbone.history.navigate("", {trigger: true})
+    // Backbone.history.navigate("", {trigger: true})
 
     return this
   },

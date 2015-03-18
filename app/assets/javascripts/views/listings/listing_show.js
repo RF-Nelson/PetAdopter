@@ -26,9 +26,11 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
     if (Petadopter.currentUserId === this.modelId) {
       return {"Edit Listing": function () {
         var $boxContent = $("div#dialog-" + that.modelId)
-        $boxContent.html('')
-        var view = JST['listings/form']({ listing: that.model, userId: Petadopter.currentUserId })
-        $boxContent.html(view)
+        $boxContent.parent().remove()
+        Backbone.history.navigate("listings/" + that.modelId + "/edit", {trigger: true})
+
+        // var view = JST['listings/form']({ listing: that.model, userId: Petadopter.currentUserId })
+        // $boxContent.html(view)
           // var attrs = $("#newListing").serializeJSON()
           //
           // that.model.set(attrs)

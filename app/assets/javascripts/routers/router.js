@@ -31,11 +31,11 @@ Petadopter.Routers.Router = Backbone.Router.extend({
   },
 
   edit: function (id) {
-    var post = Petadopter.Collections.listings.getOrFetch(id)
+    var listing = Petadopter.Collections.listings.getOrFetch(id)
     var view = new Petadopter.Views.ListingForm({
       model: listing, collection: Petadopter.Collections.listings
     })
-    this._swapView(view)
+    this.$rootEl.append(view.render().$el)
   },
 
   show: function (id) {
