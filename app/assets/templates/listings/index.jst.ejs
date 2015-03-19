@@ -17,7 +17,11 @@
         <li><strong class="attr">Animal: </strong><%= listing.escape('species') %></li>
         <li><strong class="attr">Pet Name: </strong><%= listing.escape('pet_name') %></li>
         <% if (listing.escape('breed') !== "")  { %>
+          <% if (listing.escape('species') === "Cat" || listing.escape('species') === "Dog") { %>
             <li><strong class="attr">Breed: </strong><%= listing.escape('breed') %></li>
+            <% } else {%>
+            <li><strong class="attr">Type: </strong><%= listing.escape('breed') %></li>
+            <% } %>
         <% } %>
         <li><strong class="attr">Location: </strong><%= listing.escape('location') %></li>
         <li><strong class="attr">Gender: </strong><%= listing.escape('gender') %></li>
