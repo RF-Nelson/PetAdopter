@@ -3,38 +3,110 @@
     <fieldset>
 
       <input type="hidden" id="owner_id" name="owner_id" value="<%= userId %>">
+      <table>
+        <tr>
+          <td><label for="pet_name">Pet's Name:</label></td>
+          <td><input class="newListField" type="text" id="pet_name" name="pet_name" value="<%= listing.escape('pet_name') %>">
+          </td>
+        </tr>
+        <tr>
+          <td><label for="species">Animal:</label></td>
+          <td><select class="newListField" id="species" name="species">
+            <% if (listing.escape('species') === "Cat") { %>
+              <option selected>Cat</option>
+            <% } else { %>
+              <option>Cat</option>
+            <% } %>
+            <% if (listing.escape('species') === "Dog") { %>
+              <option selected>Dog</option>
+            <% } else { %>
+              <option>Dog</option>
+            <% } %>
+            <% if (listing.escape('species') === "Bird") { %>
+              <option selected>Bird</option>
+            <% } else { %>
+              <option>Bird</option>
+            <% } %>
+            <% if (listing.escape('species') === "Rodent") { %>
+              <option selected>Rodent</option>
+            <% } else { %>
+              <option>Rodent</option>
+            <% } %>
+            <% if (listing.escape('species') === "Reptile") { %>
+              <option selected>Reptile</option>
+            <% } else { %>
+              <option>Reptile</option>
+            <% } %>
+            <% if (listing.escape('species') === "Aquatic") { %>
+              <option selected>Aquatic</option>
+            <% } else { %>
+              <option>Aquatic</option>
+            <% } %>
+            <% if (listing.escape('species') === "Amphibian") { %>
+              <option selected>Amphibian</option>
+            <% } else { %>
+              <option>Amphibian</option>
+            <% } %>
+            <% if (listing.escape('species') === "Human") { %>
+              <option selected>Human</option>
+            <% } else { %>
+              <option>Human</option>
+            <% } %>
+          </select></td>
+        </tr>
+        <tr>
+          <td><label for="breed">Breed/Type:</label></td>
+          <td><input class="newListField" id="breed" type="text" name="breed" value="<%= listing.escape('breed') %>"></td>
+        </tr>
+        <tr>
+          <td><label for="gender">Gender:</label></td>
+          <td><select class="newListField" id="gender" name="gender">
+            <% if (listing.escape('gender') === "Male") { %>
+              <option selected>Male</option>
+            <% } else { %>
+              <option>Male</option>
+            <% } %>
+            <% if (listing.escape('gender') === "Female") { %>
+              <option selected>Female</option>
+            <% } else { %>
+              <option>Female</option>
+            <% } %>
+            <% if (listing.escape('gender') === "Transgender") { %>
+              <option selected>Transgender</option>
+            <% } else { %>
+              <option>Transgender</option>
+            <% } %>
+            <% if (listing.escape('gender') === "Genderqueer/Androgynous") { %>
+              <option selected>Genderqueer/Androgynous</option>
+            <% } else { %>
+              <option>Genderqueer/Androgynous</option>
+            <% } %>
+            <% if (listing.escape('gender') === "Intersex") { %>
+              <option selected>Intersex</option>
+            <% } else { %>
+              <option>Intersex</option>
+            <% } %>
+            <% if (listing.escape('gender') === "Unknown") { %>
+              <option selected>Unknown</option>
+            <% } else { %>
+              <option>Unknown</option>
+            <% } %>
+          </select></td>
+        </tr>
+        <tr>
+          <td><label for="age">Age:</label></td>
+          <td><input class="newListField" id="age" type="text" name="age" value="<%= listing.escape('age') %>"></td>
+        </tr>
+        <tr>
+          <td><label for="location">Location:</label></td>
+          <td><input class="newListField" id="location" type="text" name="location" value="<%= listing.escape('location') %>"></td>
+        </tr>
+      </table>
 
-      <label>Pet's Name:
-      <input type="text" id="pet_name" name="pet_name" value="<%= listing.escape('pet_name') %>">
-      </label><br><br>
 
-      <label>Animal:
-        <select id="species" name="species">
-          <option>Cat</option>
-          <option>Dog</option>
-          <option>Bird</option>
-          <option>Rodent</option>
-          <option>Reptile</option>
-          <option>Human</option>
-        </select>
-      </label><br><br>
-
-      <label>Breed:
-        <input id="breed" type="text" name="breed" value="<%= listing.escape('breed') %>">
-      </label><br><br>
-
-      <label>Age:
-        <input id="age" type="text" name="age" value="<%= listing.escape('age') %>">
-      </label><br><br>
-
-      <label>Location:
-        <input id="location" type="text" name="location" value="<%= listing.escape('location') %>">
-      </label><br><br>
-
-      Description:<br>
       <label>
-        <textarea id="body" name="body" rows="6" cols="32"><%= listing.escape('body') %></textarea>
-      </label><br>
+        <textarea id="body" name="body" rows="6" cols="32" placeholder="Please enter a detailed description of this pet."><%= listing.escape('body') %></textarea>
+      </label>
 
     </fieldset>
   </form>

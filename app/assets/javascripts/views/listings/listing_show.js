@@ -45,7 +45,7 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
                 $(this).dialog('close');
                 $(this).remove()
                 that.model.destroy()
-                $("div#dialog-" + that.modelId).parent().effect("puff")
+                $("div#dialog-" + that.modelId).parent().effect("explode")
                 setTimeout(function () {
                   $("div#dialog-" + that.modelId).parent().remove()
                 }, 700)
@@ -75,7 +75,7 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
       userId: Petadopter.currentUserId
     })
     var dialog = $(view).dialog({
-      height: 560, width: 510,
+      height: 560, width: 530,
       position: { my: "center", at: "center", of: $('[data-id="'+ this.modelId +'"]')},
       show: {
         effect: "blind",
@@ -86,8 +86,8 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
         $("div#dialog-" + that.modelId).remove()
       },
       hide: {
-        effect: "clip",
-        duration: 500
+        effect: "fold",
+        duration: 900
       }})
 
       $(dialog).parent().on('click', '.combut', function () {

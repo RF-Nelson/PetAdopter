@@ -362,11 +362,30 @@ textarea {
 
 .comment {
   background: #e3e3e3;
+  width: 460px;
   padding: 12px;
   margin-bottom: 15px;
   border-radius: 6px;
   box-shadow: 3px 3px, -0.8em 0 0.4em #ccc;
 }
+
+select {
+	border: 0 !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: #9c9ded;
+	width: 100px;
+	text-indent: 0.01px;
+  color: white;
+	border-radius: 10px 0;
+	padding: 5px;
+	box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
+}
+
+/*select:after {
+  color: #444;
+  content: ' ▾';
+}*/
 
 .comments-list .comment .removeComment {
   background: #ff5476;

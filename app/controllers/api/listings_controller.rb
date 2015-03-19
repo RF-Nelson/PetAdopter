@@ -51,7 +51,7 @@ class Api::ListingsController < ApplicationController
 
     def listing_params
       params.require(:listing).permit(:owner_id, :location, :pet_name, :species,
-      :breed, :age, :body)
+      :breed, :age, :body, :gender)
     end
 
 end

@@ -1,7 +1,7 @@
 class Listing < ActiveRecord::Base
 
   validates :owner_id, :location, :pet_name, :species, :body, presence: true
-  validates :species, inclusion: { in: %w(Dog Cat Bird Reptile Human Rodent) }
+  validates :species, inclusion: { in: %w(Dog Cat Bird Reptile Human Rodent Aquatic Amphibian) }
 
   belongs_to( :user,
     class_name: "User",

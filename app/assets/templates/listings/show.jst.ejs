@@ -6,13 +6,22 @@
         <td class="cell"><%= listing.escape('pet_name') %></td>
       </tr>
       <tr>
-        <td>Animal Type:</td>
+        <td>Gender:</td>
+        <td class="cell"><%= listing.escape('gender') %></td>
+      </tr>
+      <tr>
+        <td>Animal:</td>
         <td class="cell"><%= listing.escape('species') %></td>
       </tr>
       <% if (listing.escape('breed') !== "")  { %>
         <tr>
-          <td>Breed:</td>
-          <td class="cell"><%= listing.escape('breed') %></td>
+          <% if (listing.escape('species') === "Cat" || listing.escape('species') === "Dog") { %>
+            <td>Breed:</td>
+            <td class="cell"><%= listing.escape('breed') %></td>
+          <% } else {%>
+            <td>Type:</td>
+            <td class="cell"><%= listing.escape('breed') %></td>
+          <% } %>
         </tr>
       <% } %>
       <% if (listing.escape('age') !== "")  { %>

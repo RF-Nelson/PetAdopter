@@ -2,6 +2,9 @@ Petadopter.Views.ListingForm = Backbone.View.extend({
   template: JST['listings/form'],
 
   render: function () {
+    var pos = $(window).scrollTop()
+    Backbone.history.navigate("", {trigger: true})
+    $(window).scrollTop(pos)
     var that = this
     var view = this.template({
       listing: this.model,
@@ -9,11 +12,11 @@ Petadopter.Views.ListingForm = Backbone.View.extend({
     })
 
     var dialog = $(view).dialog({
-      height: 600, width: 620,
+      height: 550, width: 410,
       modal: true,
       show: {
-        effect: "blind",
-        duration: 1000
+        effect: "slide",
+        duration: 500
       },
       buttons: {"Submit Listing": function () {
           var attrs = $("#newListing").serializeJSON()
@@ -23,7 +26,6 @@ Petadopter.Views.ListingForm = Backbone.View.extend({
             success: function () {
               that.collection.add(that.model, {merge: true})
               $(dialog).dialog('close')
-              Backbone.history.navigate("", {trigger: true})
             },
             error: function () {
               $("form#newListing").prepend("<h4 style='color:red'>Please make sure your new adoption listing has a Pet Name, Location, and Description.</h4></style>")
@@ -35,7 +37,7 @@ Petadopter.Views.ListingForm = Backbone.View.extend({
         $("div#new_listing").remove()
       },
       hide: {
-        effect: "explode",
+        effect: "scale",
         duration: 500
       }
     })
