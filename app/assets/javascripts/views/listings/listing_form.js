@@ -23,6 +23,7 @@ Petadopter.Views.ListingForm = Backbone.View.extend({
             success: function () {
               that.collection.add(that.model, {merge: true})
               $(dialog).dialog('close')
+              Backbone.history.navigate("", {trigger: true})
             },
             error: function () {
               $("form#newListing").prepend("<h4 style='color:red'>Please make sure your new adoption listing has a Pet Name, Location, and Description.</h4></style>")

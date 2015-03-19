@@ -75,7 +75,7 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
       userId: Petadopter.currentUserId
     })
     var dialog = $(view).dialog({
-      height: 460, width: 620,
+      height: 560, width: 510,
       position: { my: "center", at: "center", of: $('[data-id="'+ this.modelId +'"]')},
       show: {
         effect: "blind",
