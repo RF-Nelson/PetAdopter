@@ -96,7 +96,6 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
         var attrs = dialog.serializeJSON()
         // debugger
         var comment = new Petadopter.Models.Comment()
-        var thatthis = this
         comment.set(attrs)
         comment.save({}, {
           success: function () {
@@ -109,6 +108,19 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
             // debugger
           }
         });
+      })
+
+      $(dialog).parent().on('click', '.removeComment', function () {
+        event.preventDefault()
+        var comment = $(event.target).parent().attr('id')
+        var id = comment[comment.length-1];
+        comment = new Petadopter.Models.Comment({ id: id, listing: that.modelId })
+        comment.fetch({
+          success: function () {
+            comment.destroy()
+            that.comments.remove(comment)
+          }
+        })
       })
 
       // setTimeout(function() {ackbone.history.navigate("", {trigger: true)}, 800)
