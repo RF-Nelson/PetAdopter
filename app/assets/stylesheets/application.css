@@ -344,7 +344,7 @@ textarea {
   border-radius: 6px;
   background: #eee;
   box-shadow: 2px 1px, -0.4em 0 0.2em #ccc;
-  margin-top: 25px;
+  margin-top: 12px;
 }
 
 
@@ -387,6 +387,9 @@ select {
   color: #444;
   content: ' ▾';
 }*/
+.comment {
+  position: relative;
+}
 
 .comments-list .comment .removeComment {
   background: #ff5476;
@@ -398,16 +401,25 @@ select {
   -webkit-border-radius: 60;
   -moz-border-radius: 60;
   border-radius: 60px;
+  position: absolute;
   font-family: Georgia;
   color: #ffffff;
   font-size: 11px;
   margin-top: 10px;
   /*margin-left: 3px;*/
   padding: 5px 10px 5px 10px;
+  bottom: 10px;
+  right: 5px;
   text-decoration: none;
   float:right;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.byline {
+  margin-top: 10px;
+  color: #7d7d7d;
+  font-style: italic;
 }
 
 .comments-list .comment .removeComment:hover {

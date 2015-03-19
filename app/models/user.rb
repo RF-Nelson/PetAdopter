@@ -17,6 +17,12 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many( :comments,
+    class_name: "Comment",
+    foreign_key: :commenter_id,
+    primary_key: :id
+    )
+
   def self.find_by_credentials(username, password)
     user = User.all.find_by(email: username)
     return nil unless user && user.is_password?(password)

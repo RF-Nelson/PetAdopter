@@ -2,7 +2,11 @@
   <ul class="comments-list">
     <% comments.each(function (comment) { %>
       <li class="comment" id="<%= 'comment-' + comment.get('id') %>">
-        <%= comment.escape('body') %>
+        ‘<%= comment.escape('body') %>’
+        <br>
+        <section class="byline">
+          -<%= comment.escape('username') %>
+        </section>
         <% if ((userId === listerId) || (userId === comment.get('commenter_id'))) { %>
           <button class="removeComment" name="Remove Comment">Remove Comment</button>
         <% } %>

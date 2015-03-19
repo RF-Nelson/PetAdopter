@@ -8,5 +8,6 @@ json.picture_url image_url(listing.picture.url)
 if show_comments
    json.comments listing.comments do |comment|
      json.extract!(comment, :body, :commenter_id)
+     json.username comment.user.email
    end
 end

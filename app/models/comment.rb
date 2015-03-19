@@ -8,4 +8,10 @@ class Comment < ActiveRecord::Base
   primary_key: :id
   )
 
+  belongs_to( :user,
+  class_name: "User",
+  foreign_key: :commenter_id,
+  primary_key: :id
+  )
+
 end
