@@ -22,6 +22,12 @@ Petadopter.Models.Listing = Backbone.Model.extend({
     }
 
     return response
+  },
+
+  toJSON: function () {
+    return {
+      listing: _.clone(this.attributes)
+    }
   }
 
 });

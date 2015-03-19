@@ -2,12 +2,12 @@ class Api::ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-    render json: @listings
+    render :index
   end
 
   def show
     @listing = Listing.find(params[:id])
-    render json: @listing, include: :comments
+    render :show
   end
 
   def new
@@ -18,7 +18,7 @@ class Api::ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     if @listing.save
-      render json: @listing
+      render :show
     else
       render json: @listing.errors.full_messages, status: 422
     end
@@ -32,7 +32,7 @@ class Api::ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     if @listing.update(listing_params)
-      render json: @listing
+      render :show
       # redirect_to listing_url(@listing.id)
     else
       render json: Listing.new(listing_params).errors.full_messages, status: 422
@@ -51,7 +51,7 @@ class Api::ListingsController < ApplicationController
 
     def listing_params
       params.require(:listing).permit(:owner_id, :location, :pet_name, :species,
-      :breed, :age, :body, :gender)
+      :breed, :age, :body, :gender, :picture)
     end
 
 end

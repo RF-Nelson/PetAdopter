@@ -14,6 +14,7 @@
   <% listings.each(function (listing) {  %>
     <li class='listingitem'>
       <ul class='listing' data-id='<%= listing.get('id') %>'>
+        <img class="indexImg" src="<%= listing.escape("picture_url") %>"/>
         <li><strong class="attr">Animal: </strong><%= listing.escape('species') %></li>
         <li><strong class="attr">Pet Name: </strong><%= listing.escape('pet_name') %></li>
         <% if (listing.escape('breed') !== "")  { %>
@@ -26,7 +27,7 @@
         <li><strong class="attr">Location: </strong><%= listing.escape('location') %></li>
         <li><strong class="attr">Gender: </strong><%= listing.escape('gender') %></li>
         <!-- <li><strong class="attr">Age: </strong><%= listing.escape('age') %></li> -->
-        <section class="click2c">Click for more details about <%= listing.escape('pet_name') %></section>
+        <section class="click2c">Click for more about <%= listing.escape('pet_name') %></section>
       </ul>
     </li>
     <br>

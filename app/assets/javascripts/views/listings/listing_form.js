@@ -20,12 +20,14 @@ Petadopter.Views.ListingForm = Backbone.View.extend({
       },
       buttons: {"Submit Listing": function () {
           var attrs = $("#newListing").serializeJSON()
-
           that.model.set(attrs)
           that.model.save({}, {
             success: function () {
               that.collection.add(that.model, {merge: true})
               $(dialog).dialog('close')
+              var pos = $(window).scrollTop()
+              Backbone.history.navigate("", {trigger: true})
+              $(window).scrollTop(pos)
             },
             error: function () {
               $("form#newListing").prepend("<h4 style='color:red'>Please make sure your new adoption listing has a Pet Name, Location, and Description.</h4></style>")
@@ -42,6 +44,17 @@ Petadopter.Views.ListingForm = Backbone.View.extend({
       }
     })
 
+    $(dialog).on("change", "#input-picture-file", function () {
+      var file = event.target.files[0]
+      var fileReader = new FileReader()
+      fileReader.onloadend = function () {
+        that.model.set("picture", fileReader.result)
+        that.previewPic(fileReader.result)
+      }
+
+      fileReader.readAsDataURL(file)
+    })
+
     // var form = dialog.find("#newListing").on("submit", function (event) {
     //   event.preventDefault()
     //   addListing()
@@ -51,6 +64,10 @@ Petadopter.Views.ListingForm = Backbone.View.extend({
     // Backbone.history.navigate("", {trigger: true})
 
     return this
+  },
+
+  previewPic: function (src) {
+    this.$("#picture-preview").attr("src", src)
   },
 
   addListing: function () {

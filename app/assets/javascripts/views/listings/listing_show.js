@@ -38,8 +38,8 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
           resizable: false,
           modal: true,
           title: "Confirm listing deletion",
-          height: 220,
-          width: 400,
+          height: 240,
+          width: 390,
           buttons: {
             "Yes": function () {
                 $(this).dialog('close');

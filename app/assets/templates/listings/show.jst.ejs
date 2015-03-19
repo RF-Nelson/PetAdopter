@@ -1,5 +1,5 @@
 <div id="dialog" title="<%= listing.escape('pet_name') %>">
-
+  <section class="listingTop">
     <table class="table">
       <tr>
         <td>Name:</td>
@@ -36,9 +36,13 @@
       </tr>
     </table>
 
+    <img class="listingImg" src="<%= listing.escape('picture_url') %>"/>
+  </section>
     <section class="listingBody">
       <%= listing.escape('body') %>
     </section>
+    <br>
+    <section class="comments"></section>
 
   <% if (userId !== null) { %>
     <section class="addComment">
@@ -55,7 +59,7 @@
   <% } %>
     </section>
 
-    <section class="comments"></section>
+
 
     <div id="dialog-confirm"></div>
 

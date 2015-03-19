@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  has_attached_file :picture, default_url: "user_picture.png"
+  validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+
   has_many( :listings,
     class_name: "Listing",
     foreign_key: :owner_id,
