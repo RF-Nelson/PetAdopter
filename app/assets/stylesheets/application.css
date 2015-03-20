@@ -441,10 +441,11 @@ select {
 
 .indexImg {
   display: block;
-  width: 140px;
-  height: auto;
+  width: auto;
+  height: 160px;
   float: right;
   vertical-align: auto;
+  overflow: hidden;
 }
 
 .listingImg {

@@ -1,4 +1,6 @@
 class Listing < ActiveRecord::Base
+  include PgSearch
+  multisearchable against: [:location, :pet_name, :species, :breed, :gender]
 
   validates :owner_id, :location, :pet_name, :species, :body, presence: true
   validates :species, inclusion: { in: %w(Dog Cat Bird Reptile Human Rodent Aquatic Amphibian) }

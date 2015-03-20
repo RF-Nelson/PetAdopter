@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'root#root'
 
   namespace :api, defaults: { format: :json } do
+    get "/search", to: "static_pages#search"
     resources :listings do
       resources :comments, only: [:index, :create, :show, :destroy]
     end

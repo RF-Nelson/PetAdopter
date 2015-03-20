@@ -67,3 +67,5 @@ end
 gem "figaro"
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
+gem "pg_search"
+gem 'kaminari'
