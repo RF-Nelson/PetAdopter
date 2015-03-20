@@ -15,7 +15,8 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
     'click .listing': 'goToListing',
     'click .new_listing': 'newListing',
     "change .query": "search",
-    'click .search button': 'filter'
+    'click .search .filter': 'filter',
+    'click .searchFilter': 'filteredSearch'
 		// "click .next-page": "nextPage",
 		// "click .prev-page": "prevPage" // not implemented
   },
@@ -23,7 +24,7 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
   filter: function (event) {
     var filter = $(event.target).attr('name')
 
-     if ($(event.target).attr('class') === 'clicked') {
+     if ($(event.target).attr('class') === 'filter clicked') {
        $(event.target).removeClass('clicked')
        if (this.filters.length === 1) {
          this.filters = []
@@ -37,18 +38,38 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
        this.filters.push(filter)
        $(event.target).addClass('clicked')
      }
-    console.log(this.filters);
-    event.preventDefault();
-    // this.filters.push(filter)
-    // this.searchResults.pageNum = 1;
-    // this.searchResults.query = filter
-    //
-    // this.searchResults.fetch({
-    //   data: {
-    //     query: this.searchResults.query,
-    //     page: 1
-    //   }
-    // });
+  },
+
+  filteredSearch: function () {
+    var that = this
+    if (this.filters.length === 0) {
+      $('.bodyContainer').prepend("PLEASE ADD A FILTER TO YOUR SEARCH")
+    } else {
+      var query = ""
+      this.filters.forEach(function (filter) {
+        query = query + (filter + " ")
+      })
+      event.preventDefault();
+      this.searchResults.pageNum = 1;
+      this.searchResults.query = query
+
+      this.searchResults.fetch({
+        data: {
+          query: this.searchResults.query,
+          page: 1
+        }
+      });
+      $('.filter').each(function (child) {
+        var $el = $($('.filter')[child])
+
+        for (var i = 0; i < that.filters.length; i++) {
+          var $x = $(child)
+          if (that.filters[i] === ($el.attr('name'))) {
+            $el.addClass('clicked')
+          }
+        }
+      })
+    }
   },
 
   render: function () {
@@ -72,8 +93,19 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
   },
 
   renderSearch: function () {
+    var that = this;
     var view = this.template({ listings: this.searchResults, userId: Petadopter.currentUserId })
     $('.bodycontainer').html(view)
+    $('.filter').each(function (child) {
+      var $el = $($('.filter')[child])
+
+      for (var i = 0; i < that.filters.length; i++) {
+        var $x = $(child)
+        if (that.filters[i] === ($el.attr('name'))) {
+          $el.addClass('clicked')
+        }
+      }
+    })
   },
 
 	// bindScroll: function () {
