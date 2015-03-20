@@ -133,6 +133,7 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
             effect: "slide",
             duration: 700
           },
+          title: "Photo of " + that.model.escape('pet_name') + " the " + that.model.escape('species'),
           modal: true,
           close: function () {
             $(this).remove()

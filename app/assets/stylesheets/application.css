@@ -465,8 +465,11 @@ select {
 
 .listingTop {
   width: 480;
+  height: 300px;
+  overflow: hidden;
   display: block;
   height: 160px;
+  padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
