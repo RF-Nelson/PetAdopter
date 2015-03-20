@@ -143,6 +143,10 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
           }})
       })
 
+      $(dialog).tooltip({
+        tooltipClass: 'listingTip'
+      })
+
       // setTimeout(function() {ackbone.history.navigate("", {trigger: true)}, 800)
 
     // Backbone.history.navigate("", {trigger: true})

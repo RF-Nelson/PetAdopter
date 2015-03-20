@@ -36,14 +36,14 @@
       </tr>
     </table>
 
-    <img class="listingImg" src="<%= listing.escape('picture_url') %>"/>
+    <img title="Click to enlarge photo." class="listingImg" src="<%= listing.escape('picture_url') %>"/>
   </section>
     <section class="listingBody">
       <%= listing.escape('body') %>
     </section>
     <br>
     <br>
-    <section class="interested">If you're interested in adopting <%= listing.escape('pet_name') %> please e-mail their caretaker at <p class="mail"><%= listing.escape('email') %></p></section>
+    <section class="interested">If you're interested in adopting <%= listing.escape('pet_name') %> please e-mail their caretaker at <p title="This has been obfuscated and cannot be copied." class="mail"><%= listing.escape('email') %></p></section>
     <br>
     <section class="comments"></section>
 

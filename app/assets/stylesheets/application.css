@@ -526,3 +526,19 @@ select {
 .search .clicked {
   background: red;
 }
+
+.listingTip {
+  position: absolute;
+  letter-spacing: 2px;
+  font-size: 14px;
+  width:300px !important;
+  height: 60px !important;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #DBDBDB;
+  background: #000000;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 3px 3px 2px #CECFCC;
+}
