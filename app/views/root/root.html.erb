@@ -1,11 +1,14 @@
 <% content_for :header do  %>
   <%= render 'layouts/header' %>
 <% end %>
-
+<% user_email = current_user.try(:email) %>
+<% if user_email %>
+  <% user_email = user_email.reverse %>
+<% end %>
 <div id="content"></div>
 <script type="text/javascript" charset="utf-8">
   $(Petadopter.initialize({
     user_id: <%= current_user.try(:id) || "null" %>,
-    username: "<%= current_user.try(:email) || 'null' %>"
+    username: "<%= user_email || 'null' %>"
   }));
 </script>

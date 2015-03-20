@@ -6,7 +6,7 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
   initialize: function (options) {
     this.comments = this.model.comments()
     this.modelId = this.model.id
-    this.$rootEl = options.$rootEl
+    // this.$rootEl = options.$rootEl
     this.listenTo(this.comments, 'all', function () {
       var $dialogBox = $("div#dialog-" + this.modelId)
       var $comments = $dialogBox.children(".comments")
@@ -64,11 +64,9 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
   },
 
   render: function () {
-    // $("body").scroll(function(e){ e.preventDefault()});
-    // $('body').addClass('stop-scrolling')
-    var pos = $(window).scrollTop()
-    Backbone.history.navigate("", {trigger: true})
-    $(window).scrollTop(pos)
+    // var pos = $(window).scrollTop()
+    // Backbone.history.navigate("", {trigger: true})
+    // $(window).scrollTop(pos)
     var that = this
     var view = this.template({
       listing: this.model,
@@ -83,6 +81,7 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
       },
       buttons: that.dialogButtons(),
       close: function () {
+        $("div#dialog-" + that.modelId).dialog('destroy')
         $("div#dialog-" + that.modelId).remove()
       },
       hide: {
@@ -94,7 +93,6 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
         event.preventDefault();
         var dialog = $(".newCommentForm")//.parent()
         var attrs = dialog.serializeJSON()
-        // debugger
         var comment = new Petadopter.Models.Comment()
         comment.set(attrs)
         comment.save({}, {
@@ -105,7 +103,6 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
             // var $comments = $dialogBox.children(".comments")
             // $comments.html("")
             // $comments.html(that.commentsTemplate({ comments:that.comments }))
-            // debugger
           }
         });
       })
@@ -113,6 +110,7 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
       $(dialog).parent().on('click', '.removeComment', function () {
         event.preventDefault()
         var comment = $(event.target).parent().attr('id')
+        debugger
         var id = comment[comment.length-1];
         comment = new Petadopter.Models.Comment({ id: id, listing: that.modelId })
         comment.fetch({
@@ -128,7 +126,7 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
         var picLink = '<img src="' + pic + '"/>'
         $('#photo-modal').html(picLink)
         $('#photo-modal').dialog({
-          height: 660, width: 800,
+          height: $(window).height(), width: 800,
           show: {
             effect: "slide",
             duration: 700

@@ -98,7 +98,16 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
     var id = $target.attr('data-id')
     var $dialogBox = $("div#dialog-" + id)
     if ($dialogBox.length === 0) {
-      Backbone.history.navigate("listings/" + id, {trigger: true})
+      //Backbone.history.navigate("listings/" + id, {trigger: true})
+      var post = Petadopter.Collections.listings.getOrFetch(id)
+
+      var that = this
+
+      var view = new Petadopter.Views.ListingShow({
+        model: post//, $rootEl: that.$rootEl
+      })
+      $('.content').append(view.render().$el)
+      $('[data-id="' + id + '"]').effect("transfer", { to: $("div#dialog-" + id) }, 800)
     } else {
       $dialogBox.parents(".ui-dialog").effect("shake", "slow")
     }

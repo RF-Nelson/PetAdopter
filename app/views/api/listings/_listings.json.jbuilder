@@ -8,7 +8,7 @@ json.email listing.user.email.reverse
 
 if show_comments
    json.comments listing.comments do |comment|
-     json.extract!(comment, :body, :commenter_id)
+     json.extract!(comment, :body, :commenter_id, :id)
      json.username comment.user.email.reverse
    end
 end

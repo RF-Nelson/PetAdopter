@@ -44,7 +44,7 @@ Petadopter.Routers.Router = Backbone.Router.extend({
     var that = this
 
     var view = new Petadopter.Views.ListingShow({
-      model: post, $rootEl: that.$rootEl
+      model: post//, $rootEl: that.$rootEl
     })
     that.$rootEl.append(view.render().$el)
     $('[data-id="' + id + '"]').effect("transfer", { to: $("div#dialog-" + id) }, 800)

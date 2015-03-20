@@ -109,7 +109,8 @@ body .listing li {
 body .all_listings {
   /*width: 600px;
   margin: auto;*/
-  padding-left: 100px;
+  padding-left: 30px;
+  width: 600px;
 }
 
 body .listings_header {
@@ -119,6 +120,7 @@ body .listings_header {
   font-size: 24px;
   /*margin-right: 210px;*/
   text-align: center;
+  margin-top: 20px;
 }
 
 .logo {
@@ -130,12 +132,18 @@ body .listings_header {
   margin: 18px;
 }
 
-.header {
-  display: block;
+.header_parent {
   background: #dae0f1;
+  /*display: block;*/
+  /*width: 100% !important;*/
+}
+
+body .header_parent .header {
   border-bottom: 2px solid #ced5ed;
   font-weight: 400px;
   min-height: 85px;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .auth {
@@ -494,4 +502,15 @@ select {
   display:inline;
   unicode-bidi:bidi-override;
   direction:rtl;
+}
+
+.search input {
+  width: 200px;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.search {
+  display: block;
+  float: right;
 }
