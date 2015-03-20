@@ -123,6 +123,27 @@ Petadopter.Views.ListingShow = Backbone.View.extend({
         })
       })
 
+      $(dialog).parent().on('click', 'img', function () {
+        var pic = $(event.target).attr('src')
+        var picLink = '<img src="' + pic + '"/>'
+        $('#photo-modal').html(picLink)
+        $('#photo-modal').dialog({
+          height: 660, width: 800,
+          show: {
+            effect: "slide",
+            duration: 700
+          },
+          modal: true,
+          close: function () {
+            $(this).remove()
+            $('#photo-modal').html('')
+          },
+          hide: {
+            effect: "clip",
+            duration: 600
+          }})
+      })
+
       // setTimeout(function() {ackbone.history.navigate("", {trigger: true)}, 800)
 
     // Backbone.history.navigate("", {trigger: true})

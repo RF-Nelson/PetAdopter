@@ -422,6 +422,12 @@ select {
   font-style: italic;
 }
 
+.quote {
+  color: #7d7d7d;
+  opacity: 0.75;
+  font-size: 24px;
+}
+
 .comments-list .comment .removeComment:hover {
   background: #9c1a21;
   background-image: -webkit-linear-gradient(top, #9c1a21, #d600ab);
@@ -464,9 +470,9 @@ select {
   margin-bottom: 10px;
 }
 
-/*.ui-dialog-content {
-  width: 500px;
-}*/
+.ui-dialog-content img:hover {
+  cursor: pointer;
+}
 
 .ui-dialog .ui-dialog-content .listingBody {
   margin-top: 10px;
@@ -474,4 +480,9 @@ select {
   float: left;
   margin-bottom: 10px;
 
+}
+
+#photo-modal img {
+  width: 740px;
+  margin-left: 5px;
 }
