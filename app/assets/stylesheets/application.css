@@ -488,3 +488,9 @@ select {
   width: 740px;
   margin-left: 5px;
 }
+
+.mail {
+  display:inline;
+  unicode-bidi:bidi-override;
+  direction:rtl;
+}

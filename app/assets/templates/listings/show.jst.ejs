@@ -1,4 +1,4 @@
-<div id="dialog" title="<%= listing.escape('pet_name') %>">
+<div id="dialog" title="<%= listing.escape('pet_name') %> the <%= listing.escape('breed') %>">
   <section class="listingTop">
     <table class="table">
       <tr>
@@ -43,6 +43,8 @@
     </section>
     <br>
     <br>
+    <section class="interested">If you're interested in adopting <%= listing.escape('pet_name') %> please e-mail their caretaker at <p class="mail"><%= listing.escape('email') %></p></section>
+    <br>
     <section class="comments"></section>
 
   <% if (userId !== null) { %>
@@ -50,6 +52,7 @@
       <article class="commentForm">
         <form class="newCommentForm">
           <fieldset>
+            <input type="hidden" name="username" value="<%= Petadopter.currentUsername %>">
             <input type="hidden" id="commenter_id" name="commenter_id" value="<%= userId %>">
             <input type="hidden" id="listing_id" name="listing_id" value="<%= listing.id %>">
             <textarea id="body" name="body" rows="3" cols="42" placeholder="Enter your comment here"></textarea><br>

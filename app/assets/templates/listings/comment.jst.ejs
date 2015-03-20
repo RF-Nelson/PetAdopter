@@ -5,7 +5,7 @@
         ‘<%= comment.escape('body') %>’
         <br>
         <section class="byline">
-          -<%= comment.escape('username') %>
+          -<p class="mail"><%= comment.escape('username') %></p>
         </section>
         <% if ((userId === listerId) || (userId === comment.get('commenter_id'))) { %>
           <button class="removeComment" name="Remove Comment">Remove Comment</button>
