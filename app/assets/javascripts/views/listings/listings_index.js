@@ -8,14 +8,47 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
 		this.searchResults = new Petadopter.Collections.SearchResults();
 		this.searchResults.pageNum = 1;
 		this.listenTo(this.searchResults, "sync", this.renderSearch);
+    this.filters = []
   },
 
   events: {
     'click .listing': 'goToListing',
     'click .new_listing': 'newListing',
     "change .query": "search",
-		"click .next-page": "nextPage",
-		"click .prev-page": "prevPage" // not implemented
+    'click .search button': 'filter'
+		// "click .next-page": "nextPage",
+		// "click .prev-page": "prevPage" // not implemented
+  },
+
+  filter: function (event) {
+    var filter = $(event.target).attr('name')
+
+     if ($(event.target).attr('class') === 'clicked') {
+       $(event.target).removeClass('clicked')
+       if (this.filters.length === 1) {
+         this.filters = []
+       }
+       for (var i = 0; i < this.filters.length; i++) {
+         if (this.filters[i] === filter) {
+           this.filters.splice(i, this.filters.length - 1)
+         }
+       }
+     } else {
+       this.filters.push(filter)
+       $(event.target).addClass('clicked')
+     }
+    console.log(this.filters);
+    event.preventDefault();
+    // this.filters.push(filter)
+    // this.searchResults.pageNum = 1;
+    // this.searchResults.query = filter
+    //
+    // this.searchResults.fetch({
+    //   data: {
+    //     query: this.searchResults.query,
+    //     page: 1
+    //   }
+    // });
   },
 
   render: function () {

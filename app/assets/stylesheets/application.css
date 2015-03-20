@@ -512,5 +512,17 @@ select {
 
 .search {
   display: block;
-  float: right;
+  float: left;
+}
+
+.search button {
+  background: blue;
+  color: white;
+  border-radius: 6px;
+  padding: 5px 10px;
+  float: left;
+}
+
+.search .clicked {
+  background: red;
 }
