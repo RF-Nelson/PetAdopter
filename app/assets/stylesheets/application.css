@@ -458,7 +458,7 @@ select {
 
 .listingImg {
   display: block;
-  width: 200px;
+  width: 210px;
   height: auto;
   float: right;
   /*margin-right: 10px;
@@ -476,7 +476,7 @@ select {
   width: 490;
   overflow: hidden;
   display: block;
-  height: 190px;
+  height: 210px;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }

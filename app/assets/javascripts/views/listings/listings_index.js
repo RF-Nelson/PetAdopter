@@ -3,7 +3,7 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
   template: JST['listings/index'],
 
   initialize: function () {
-    this.listenTo(this.collection, 'all', this.render)
+    this.listenTo(this.collection, 'add remove', this.render)
     // this.bindScroll(); // infinite scroll
 		this.searchResults = new Petadopter.Collections.SearchResults();
 		this.searchResults.pageNum = 1;
