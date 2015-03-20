@@ -80,8 +80,8 @@ body .listing {
   padding: 10px;
   text-align: center;
   border: 1px solid #ccc;
-  width: 600px;
-  margin-left: 120px;
+  /*width: 600px;
+  margin-left: 120px;*/
   /*border-bottom: 1px solid #ccc;*/
 }
 
@@ -109,8 +109,8 @@ body .listing li {
 body .all_listings {
   /*width: 600px;
   margin: auto;*/
-  padding-left: 30px;
-  width: 600px;
+  /*padding-left: 30px;
+  width: 600px;*/
 }
 
 body .listings_header {
@@ -144,6 +144,8 @@ body .header_parent .header {
   min-height: 85px;
   width: 1000px;
   margin: 0 auto;
+  border-left:  2px solid #ced5ed;
+  border-right:  2px solid #ced5ed;
 }
 
 .auth {
@@ -505,7 +507,7 @@ select {
 }
 
 .search input {
-  width: 200px;
+  width: 172px;
   padding: 10px;
   margin-right: 20px;
 }
@@ -513,6 +515,23 @@ select {
 .search {
   display: block;
   float: left;
+  width: 220px;
+  text-align: center;
+  padding: 20px;
+  border-right: 2px solid #ced5ed;
+  border-left: 2px solid #ced5ed;
+  margin: 0 auto;
+}
+
+.search li {
+  padding: 4px;
+}
+
+.search li:hover {
+  cursor: pointer;
+  background: #bba9f4;
+  padding-top: 6px;
+  font-weight: bold;
 }
 
 .search button {
@@ -524,7 +543,7 @@ select {
 }
 
 .search .clicked {
-  background: red;
+  background: #b0ed92;
 }
 
 .listingTip {
@@ -541,4 +560,32 @@ select {
   text-align: center;
   border-radius: 6px;
   box-shadow: 3px 3px 2px #CECFCC;
+}
+
+.bodycontainer {
+  width: 1000px;
+  margin: 0 auto;
+  /*border-left: 2px solid #ced5ed;
+  border-right: 2px solid #ced5ed;*/
+  margin-top: 2px;
+  border-right: 2px solid #ced5ed;
+
+}
+
+.searchFilter {
+  margin: 0 auto;
+}
+
+.please-select {
+  color: #aeb0ab;
+  text-align: center;
+  font-style: oblique;
+}
+
+.listings-body {
+  width: 660px;
+  display: block;
+  float: left;
+  margin-left: 42px;
+
 }

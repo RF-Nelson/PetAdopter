@@ -5,10 +5,19 @@
 <% if user_email %>
   <% user_email = user_email.reverse %>
 <% end %>
+
+<% breeds = {} %>
+<% %w(Dog Cat Bird Reptile Human Rodent Aquatic Amphibian).each do |species| %>
+  <% breeds[species] = [] %>
+  <% Listing.where({species: species}).each{|specie| breeds[species] << specie.breed} %>
+<% end %>
+<% breeds = breeds.to_json %>
+
 <div id="content"></div>
 <script type="text/javascript" charset="utf-8">
   $(Petadopter.initialize({
     user_id: <%= current_user.try(:id) || "null" %>,
-    username: "<%= user_email || 'null' %>"
+    username: "<%= user_email || 'null' %>",
+    breeds: '<%== breeds %>'
   }));
 </script>

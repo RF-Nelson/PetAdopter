@@ -9,6 +9,10 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
 		this.searchResults.pageNum = 1;
 		this.listenTo(this.searchResults, "sync", this.renderSearch);
     this.filters = []
+    this.breed = null;
+    this.gender = null;
+    this.species = null;
+
   },
 
   events: {
@@ -22,21 +26,75 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
   },
 
   filter: function (event) {
+    var that = this
     var filter = $(event.target).attr('name')
-
-     if ($(event.target).attr('class') === 'filter clicked') {
+     if ($(event.target).attr('class') === 'filter species clicked' || $(event.target).attr('class') === 'filter breed clicked' || $(event.target).attr('class') === 'filter gender clicked') {
        $(event.target).removeClass('clicked')
        if (this.filters.length === 1) {
          this.filters = []
        }
-       for (var i = 0; i < this.filters.length; i++) {
-         if (this.filters[i] === filter) {
-           this.filters.splice(i, this.filters.length - 1)
-         }
+       if ($(event.target).attr('class') === 'filter species clicked') {
+         this.species = null
        }
+
+       if ($(event.target).attr('class') === 'filter gender clicked') {
+         this.gender = null
+       }
+
+       $(event.target).parent().children().removeClass('clicked')
+
+       if ($(event.target).attr('id') === "breed-list") {
+         this.breed = null
+       }
+
      } else {
+       var $selection = $(event.target)
+       var array = $(event.target).parent().children()//.removeClass('clicked')
+      //  array.forEach(function (el) {
+      //    debugger
+      //  })
+      $(event.target).parent().children().each(function (child) {
+        // debugger
+        $($(event.target).parent().children()[child]).removeClass('clicked')
+      })
+
+      // get all siblings, then iterate through the filter array and remove
+      // any siblings before adding itself to the filter array
+      var siblings = []
+      $(event.target).siblings().each(function (sibling) {
+        for (var i = 0; i < that.filters.length; i++) {
+          siblings.push(sibling)
+        }
+      })
+
+
+
+      $(siblings).each(function (sibling) {
+        for (var i = 0; i < that.filters.length; i++) {
+          if (that.filters[i] === $($(event.target).siblings()[sibling]).attr('name')) {
+            that.filters.splice(i, 1)
+          }
+        }
+      })
+
+
+
+
+
        this.filters.push(filter)
+
        $(event.target).addClass('clicked')
+       if ($(event.target).parent().attr('id') === "breed-list") {
+         this.breed = ($(event.target).attr('name'))
+       }
+
+       if ($(event.target).attr('id') === "Breed") {
+         var species = ($selection.attr('name'))
+         var breedList = (Petadopter.breeds[species]);
+         var view = JST['breed']({ breeds: breedList })
+         $('#breed-list').html('')
+         $('#breed-list').html(view)
+       }
      }
   },
 
@@ -106,6 +164,23 @@ Petadopter.Views.ListingsIndex = Backbone.View.extend({
         }
       }
     })
+
+    $('.clicked').each(function (i) {
+      if ($('.clicked')[i].id === "Breed") {
+        var species = $($('.clicked')[0]).attr('name')
+        var breedList = (Petadopter.breeds[species]);
+        var view = JST['breed']({ breeds: breedList })
+        $('#breed-list').html('')
+        $('#breed-list').html(view)
+      }
+    })
+    // SELECT BREED AND GET IT AGAIN
+    if (this.breed) {
+      var string = "li[name='" + that.breed + "']"
+      $(string).addClass('clicked')
+      // console.log($(string));
+    }
+
   },
 
 	// bindScroll: function () {

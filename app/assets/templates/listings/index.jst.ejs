@@ -1,56 +1,64 @@
-<section class="bodycontainer">
-  <br>
-  <section class="search">
+<section class="bodycontainer group">
+
+  <section class="search group">
     <label>Search
-      <input type="text" class="query" placeholder="Enter search terms (e.g. 'male dog')">
+      <input type="text" class="query" placeholder="Enter search (e.g. 'male dog')">
     </label>
-    <button class="filter" name="Tabby">Tabby</button>
-    <br>
-    <button class="filter" name="Cat">Cat</button>
-    <br>
-    <button class="filter" name="Snake">Snake</button>
-    <br>
-    <button class="filter" name="Dog">Dog</button>
-    <br>
-    <button class="filter" name="Male">Male</button>
-    <br>
-    <button class="filter" name="Female">Female</button>
-    <br>
-    <button class="searchFilter" name="Search">Search</button>
+    <ul id="menu">
+      <li class="ui-widget-header">Animal Type</li>
+      <section class="li-species">
+        <li id="Breed" class="filter species" name="Dog">Dog</li>
+        <li id="Breed" class="filter species" name="Cat">Cat</li>
+        <li id="Breed" class="filter species" name="Bird">Bird</li>
+        <li id="Breed" class="filter species" name="Reptile">Reptile</li>
+        <li id="Breed" class="filter species" name="Rodent">Rodent</li>
+        <li id="Breed" class="filter species" name="Amphibian">Amphibian</li>
+        <li id="Breed" class="filter species" name="Aquatic">Aquatic</li>
+        <li id="Breed" class="filter species" name="Human">Human</li>
+        <li class="ui-widget-header">Breed / Type</li>
+      </section>
+      <section id="breed-list">
+        <li class="please-select">Please select an animal type</li>
+      </section>
+        <li class="ui-widget-header">Gender</li>
+        <section id="li-gender">
+          <li class="filter gender" name="Male">Male</li>
+          <li class="filter gender" name="Female">Female</li>
+        </section>
+        <li class="searchFilter" name="Search">Search</li>
+    </ul>
   </section>
-  <br>
-  <br>
-  <h2 class="listings_header">Adoption Listings</h2>
-  <br>
 
-  <% if (userId !== null) { %>
-    <div class="nlist">
-      <button class="new_listing" name="Create New Listing">Create New Listing</button>
-    </div>
-  <% } %>
-  <br>
-  <ul class='all_listings'>
-    <% listings.each(function (listing) {  %>
-      <li class='listingitem'>
-        <ul class='listing' data-id='<%= listing.get('id') %>'>
-          <img class="indexImg" src="<%= listing.escape("picture_url") %>"/>
-          <li><strong class="attr">Animal: </strong><%= listing.escape('species') %></li>
-          <li><strong class="attr">Pet Name: </strong><%= listing.escape('pet_name') %></li>
-          <% if (listing.escape('breed') !== "")  { %>
-            <% if (listing.escape('species') === "Cat" || listing.escape('species') === "Dog") { %>
-              <li><strong class="attr">Breed: </strong><%= listing.escape('breed') %></li>
-              <% } else {%>
-              <li><strong class="attr">Type: </strong><%= listing.escape('breed') %></li>
-              <% } %>
-          <% } %>
-          <li><strong class="attr">Location: </strong><%= listing.escape('location') %></li>
-          <li><strong class="attr">Gender: </strong><%= listing.escape('gender') %></li>
-          <!-- <li><strong class="attr">Age: </strong><%= listing.escape('age') %></li> -->
-          <section class="click2c">Click for more about <%= listing.escape('pet_name') %></section>
-        </ul>
-      </li>
-      <br>
-    <% }) %>
-  </ul>
-
+  <section class="listings-body group">
+    <h2 class="listings_header">Adoption Listings</h2>
+    <% if (userId !== null) { %>
+      <div class="nlist">
+        <button class="new_listing" name="Create New Listing">Create New Listing</button>
+      </div>
+    <% } %>
+    <br>
+    <ul class='all_listings'>
+      <% listings.each(function (listing) {  %>
+        <li class='listingitem'>
+          <ul class='listing' data-id='<%= listing.get('id') %>'>
+            <img class="indexImg" src="<%= listing.escape("picture_url") %>"/>
+            <li><strong class="attr">Animal: </strong><%= listing.escape('species') %></li>
+            <li><strong class="attr">Pet Name: </strong><%= listing.escape('pet_name') %></li>
+            <% if (listing.escape('breed') !== "")  { %>
+              <% if (listing.escape('species') === "Cat" || listing.escape('species') === "Dog") { %>
+                <li><strong class="attr">Breed: </strong><%= listing.escape('breed') %></li>
+                <% } else {%>
+                <li><strong class="attr">Type: </strong><%= listing.escape('breed') %></li>
+                <% } %>
+            <% } %>
+            <li><strong class="attr">Location: </strong><%= listing.escape('location') %></li>
+            <li><strong class="attr">Gender: </strong><%= listing.escape('gender') %></li>
+            <!-- <li><strong class="attr">Age: </strong><%= listing.escape('age') %></li> -->
+            <section class="click2c">Click for more about <%= listing.escape('pet_name') %></section>
+          </ul>
+        </li>
+        <br>
+      <% }) %>
+    </ul>
+  </section>
 </section>
