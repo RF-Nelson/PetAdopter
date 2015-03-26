@@ -1,8 +1,8 @@
 # PetAdopter
 
-[Heroku link][heroku]
+[Live at www.pet-adopter.com][PetAdopter]
 
-[heroku]: http://pet-adopter.herokuapp.com
+[PetAdopter]: http://www.pet-adopter.com
 
 ## Minimum Viable Product
 PetAdopter is a clone of PetFinder built on Rails and Backbone. Users can:
