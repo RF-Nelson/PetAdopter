@@ -5,7 +5,7 @@
 [PetAdopter]: http://www.pet-adopter.com
 
 
-PetAdopter is a mix of CraigsList and PetFinder built on Rails and Backbone. Users can:
+PetAdopter is a mix of CraigsList and PetFinder built on Rails and Backbone. Its purpose is to make pet adoptions as easy as possible to help animals find their new home. Users can:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
@@ -13,7 +13,7 @@ PetAdopter is a mix of CraigsList and PetFinder built on Rails and Backbone. Use
 - [x] Comment on adoption listings
 - [x] Upload photos
 - [x] Compare listings side-by-side in resizeable windows
-- [x] Search for animals by name, species, location, breed
+- [x] Search for adoption listings by name, species, location, breed
 
 ## Design Docs
 * [View Wireframes][views]
