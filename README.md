@@ -4,7 +4,7 @@
 
 [PetAdopter]: http://www.pet-adopter.com
 
-## Minimum Viable Product
+
 PetAdopter is a mix of CraigsList and PetFinder built on Rails and Backbone. Users can:
 
 - [x] Create accounts
