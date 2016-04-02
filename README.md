@@ -2,7 +2,7 @@
 
 [Live at www.pet-adopter.com][PetAdopter]
 
-[PetAdopter]: http://www.pet-adopter.com
+[PetAdopter]: http://pet-adopter.herokuapp.com/
 
 
 PetAdopter is a mix of CraigsList and PetFinder built on Rails and Backbone. Its purpose is to make pet adoptions as easy as possible to help animals find their new home. Users can:
